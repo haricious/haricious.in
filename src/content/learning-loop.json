@@ -1,0 +1,9 @@
+[
+  ["LEARN", "Start with the concept, the datasheet, the lecture, the diagram, or the question. I try to understand the vocabulary first, because confusion often begins with vague words."],
+  ["BUILD", "Turn the idea into something concrete. A small module, a model, a note, a testbench, a tool, or a rough prototype is better than perfect intention."],
+  ["BREAK", "Let the system meet reality. Inputs become messy, assumptions become visible, and the design starts telling the truth."],
+  ["DEBUG", "Slow down and isolate the failure. Trace the signal, check the timing, reread the warning, and separate what I know from what I am guessing."],
+  ["DOCUMENT", "Write down what happened while the lesson is still warm. The mistake matters because it can become a map."],
+  ["TEACH", "Explain it in plain language. If I cannot explain the design, I probably do not understand the design yet."],
+  ["REPEAT", "Return with a sharper model. The next build starts with the previous mistake already converted into structure."]
+]

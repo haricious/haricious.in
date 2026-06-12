@@ -1,0 +1,63 @@
+{
+  "navItems": [
+    { "label": "BUILD LOG", "path": "/build-log" },
+    { "label": "FIELD NOTES", "path": "/field-notes" },
+    { "label": "LEARNING", "path": "/learning" },
+    { "label": "TIMELINE", "path": "/timeline" },
+    { "label": "GITHUB REPOS", "path": "/repositories" },
+    { "label": "DREAMS", "path": "/dreams" },
+    { "label": "BOOK SHELF", "path": "/books" },
+    { "label": "POETRY", "path": "/poetry" }
+  ],
+  "floatingArchiveLinks": [
+    {
+      "title": "BUILD LOG",
+      "count": "5 entries",
+      "copy": "Projects documented from idea to outcome, including what broke.",
+      "path": "/build-log"
+    },
+    {
+      "title": "FIELD NOTES",
+      "count": "6 entries",
+      "copy": "Short notes, readings, and uncomfortable lessons.",
+      "path": "/field-notes"
+    },
+    {
+      "title": "POETRY",
+      "count": "archive",
+      "copy": "A shelf for poems, fragments, and personal writing.",
+      "path": "/poetry"
+    },
+    {
+      "title": "FAILURE ARCHIVE",
+      "copy": "A collection of broken systems, root causes, and lessons learned.",
+      "path": "/failures"
+    },
+    {
+      "title": "GITHUB REPOS",
+      "count": "2 repos",
+      "copy": "Source repositories linked to projects, notes, and learning threads.",
+      "path": "/repositories"
+    },
+    {
+      "title": "DREAMS",
+      "copy": "Long-term goals, ideas, and the signal direction behind them.",
+      "path": "/dreams"
+    },
+    {
+      "title": "BUTTERFLY EFFECT MAP",
+      "copy": "A system-level view of decisions, influence, and momentum.",
+      "path": "/butterfly-effect"
+    },
+    {
+      "title": "WHAT CHANGED ME?",
+      "copy": "The people, books, failures, and projects that rewired the path.",
+      "path": "/what-changed-me"
+    },
+    {
+      "title": "LETTERS TO FUTURE SELF",
+      "copy": "Reflections written forward, captured for what comes next.",
+      "path": "/letters"
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+[
+  {
+    "place": "The Gandhigram Rural Institute",
+    "role": "Project Intern",
+    "date": "January 2026",
+    "project": "Joint State-of-Charge and State-of-Health Estimation for Battery Management Systems Using MATLAB/Simulink",
+    "focus": [
+      "battery management systems",
+      "MATLAB",
+      "Simulink",
+      "state-of-charge estimation",
+      "state-of-health estimation",
+      "extended kalman filter"
+    ],
+    "notes": [
+      "Developed a combined State-of-Charge (SOC) and State-of-Health (SOH) estimation system using MATLAB and Simulink.",
+      "Implemented an Extended Kalman Filter (EKF) on a 12V, 7Ah lead-acid battery model.",
+      "Improved estimation and tracking accuracy under varying operating conditions.",
+      "Addressed modelling uncertainties through adaptive state estimation techniques.",
+      "Gained practical experience in battery modelling, simulation, and estimation algorithms for Battery Management Systems (BMS)."
+    ],
+    "status": "COMPLETED"
+  }
+]

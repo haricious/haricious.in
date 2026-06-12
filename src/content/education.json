@@ -1,0 +1,24 @@
+[
+  {
+    "place": "SBM College of Engineering and Technology",
+    "program": "Bachelor of Electronics and Communication Engineering",
+    "years": "2023 - 2027",
+    "focus": [
+      "digital electronics",
+      "vlsi",
+      "rtl design",
+      "semiconductor fundamentals",
+      "embedded systems",
+      "engineering mathematics",
+      "system design","control systems","digital signal processing", "Analog and Low power IC Design"
+    ],
+    "activities": ["Student Ambassador - Naan Muthalavan Initiatives", "Event Host/Organizer - AKKADIANZ (National Level Technical Symposium)"]
+  },
+  {
+    "place": "Kendriya Vidyalaya Gandhigram",
+    "program": "PCMB",
+    "years": "2013 - 2023",
+    "focus": ["physics", "chemistry", "mathematics", "biology"],
+    "activities": ["Captain of Raman House", "Member of Science Club"]
+  }
+]

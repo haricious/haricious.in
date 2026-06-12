@@ -1,0 +1,104 @@
+[
+  {
+    "slug": "digital-design-and-computer-architecture",
+    "title": "Digital Design and Computer Architecture",
+    "author": "David Harris, Sarah Harris",
+    "category": "Engineering",
+    "status": "COMPLETED",
+    "dateFinished": "[2025.06.15]",
+    "rating": 5,
+    "cover": "/assets/books/digital-design-and-computer-architecture/cover.jpg",
+    "summary": "A foundational book that connects logic design, computer architecture, Verilog, state machines, and processor design into a coherent engineering framework.",
+    "verdict": "This book transformed digital design from a collection of topics into a system of interconnected ideas.",
+    "tags": ["digital-design", "computer-architecture", "verilog", "rtl", "engineering"],
+    "details": {
+      "whyRead": "I wanted to build stronger foundations in digital design and understand how hardware systems are constructed from logic gates up to processors.",
+      "expectation": "I expected a textbook focused mainly on theory and exam preparation.",
+      "whatFound": "Instead, I found a structured explanation of how digital systems evolve from simple logic into complete computing architectures.",
+      "favoriteIdeas": [
+        "Finite State Machines",
+        "Datapath and Control Separation",
+        "Processor Architecture",
+        "Hardware Description Languages"
+      ],
+      "keyTakeaways": [
+        "Digital systems are built from layers of abstraction.",
+        "Architecture matters as much as implementation.",
+        "Timing is a design requirement, not an afterthought."
+      ],
+      "whatChanged": "After reading this book, I became significantly more interested in RTL design, FPGA development, and processor architecture.",
+      "appliedIn": ["Verilog Projects", "FSM Design", "FPGA Experiments", "Portfolio Knowledge Tree"],
+      "favoriteQuote": "The important thing is the system and not the sum of its parts.",
+      "wouldRecommend": true,
+      "recommendation": "Highly recommended for students interested in digital design, FPGA development, computer architecture, or RTL engineering."
+    }
+  },
+  {
+    "slug": "the-cuckoos-egg",
+    "title": "The Cuckoo's Egg",
+    "author": "Cliff Stoll",
+    "category": "Systems",
+    "status": "COMPLETED",
+    "dateFinished": "[2025.03.20]",
+    "rating": 4,
+    "cover": "/assets/books/the-cuckoos-egg/cover.jpg",
+    "summary": "A real-world story of tracking an intruder through network logs, debugging system behavior, and learning how complex systems fail.",
+    "verdict": "This book showed me that engineering is as much about curiosity and persistence as it is about technical skill.",
+    "tags": ["systems", "security", "debugging", "networking", "investigation"],
+    "details": {
+      "whyRead": "I wanted to understand how real systems are investigated when something breaks in the wild.",
+      "expectation": "I expected an obscure history of early computing security incidents.",
+      "whatFound": "Instead, I found a gripping narrative that connected system monitoring, human behavior, and the need to trace symptoms back to causes.",
+      "favoriteIdeas": [
+        "Audit Trails",
+        "Intrusion Detection",
+        "Systems Thinking",
+        "Persistence in Debugging"
+      ],
+      "keyTakeaways": [
+        "Good debugging is often slow, methodical, and based on evidence.",
+        "Complex systems hide their failures in small, subtle anomalies.",
+        "Investigation skills are as important as coding skills in system engineering."
+      ],
+      "whatChanged": "It made me care more about observability, log analysis, and the process of following a failure from symptom to root cause.",
+      "appliedIn": ["System Monitoring", "Debug Logs", "Failure Notes", "Project Instrumentation"],
+      "favoriteQuote": "The only thing more expensive than education is ignorance.",
+      "wouldRecommend": true,
+      "recommendation": "Recommended for engineers and students who want a practical view of how systems are defended and diagnosed."
+    }
+  },
+  {
+    "slug": "code-the-hidden-language-of-computer-hardware-and-software",
+    "title": "Code: The Hidden Language of Computer Hardware and Software",
+    "author": "Charles Petzold",
+    "category": "Computer Science",
+    "status": "COMPLETED",
+    "dateFinished": "[2025.01.10]",
+    "rating": 4,
+    "cover": "/assets/books/code-the-hidden-language-of-computer-hardware-and-software/cover.jpg",
+    "summary": "A beautifully written journey through the fundamentals of computing, from switches and circuits to assembly language and operating systems.",
+    "verdict": "This book deepened my understanding of the invisible machinery under every program and every piece of hardware.",
+    "tags": ["computer-science", "hardware", "software", "abstraction", "logic"],
+    "details": {
+      "whyRead": "I wanted to see the connections between physical circuits and the software abstractions I use every day.",
+      "expectation": "I expected a gentle introduction to computers without deep engineering detail.",
+      "whatFound": "Instead, I found clear engineering intuition built on physical components, binary logic, and elegant examples.",
+      "favoriteIdeas": [
+        "Binary Arithmetic",
+        "Logic Gates",
+        "Assembly Language",
+        "Input/Output as Communication"
+      ],
+      "keyTakeaways": [
+        "Computers are built from simple physical components.",
+        "High-level software is only meaningful when mapped to hardware behavior.",
+        "Understanding abstractions starts with understanding their physical roots."
+      ],
+      "whatChanged": "It made me a better engineer by reminding me that every abstraction is built on something concrete.",
+      "appliedIn": ["RTL Thinking", "Circuit Design", "Software-Hardware Interface", "System Architecture"],
+      "favoriteQuote": "A computer is made of silicon, but programming is made of ideas.",
+      "wouldRecommend": true,
+      "recommendation": "Great for anyone who wants a richer sense of how hardware and software connect."
+    }
+  }
+]

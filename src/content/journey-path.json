@@ -1,0 +1,13 @@
+[
+  ["retail work", "The first lessons were not about circuits. They were about showing up, speaking clearly, handling small responsibilities, and noticing how operations survive through repeatable habits."],
+  ["customer service", "Document work taught me that trust is built through accuracy. A small typo, a missed verification step, or a rushed explanation can become someone else's problem."],
+  ["engineering education", "ECE gave the curiosity a direction. Digital electronics, mathematics, signals, devices, and systems started becoming connected instead of separate subjects."],
+  ["learning programming", "C and basic tooling made me understand that logic has to be expressed precisely. The machine only does what was actually written."],
+  ["discovering digital design", "Flip-flops, gates, timing, and state machines made hardware feel programmable without becoming software. That boundary became interesting."],
+  ["discovering vlsi", "VLSI turned the question deeper: how does a design become silicon, and what does it mean to create something that exists below the surface of every modern system?"],
+  ["learning matlab", "MATLAB became a place to test signals, models, and mathematical ideas before trying to force them into hardware or physical intuition."],
+  ["learning simulation tools", "Simulation made the invisible visible. It also taught me that a clean waveform can still hide a wrong assumption."],
+  ["building projects", "Projects are where the theory becomes honest. They expose gaps faster than reading alone."],
+  ["documenting everything", "Documentation turns one struggle into reusable evidence. It lets future me see what past me misunderstood."],
+  ["becoming an engineer", "The direction is simple: keep building, keep breaking, keep explaining, and become someone who can move an idea from imagination to reality."]
+]

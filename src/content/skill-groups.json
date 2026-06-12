@@ -1,0 +1,14 @@
+[
+  {
+    "title": "TECHNICAL SKILLS",
+    "items": ["verilog", "rtl design", "digital design", "vlsi", "matlab", "simscape", "c programming", "git", "github"]
+  },
+  {
+    "title": "ENGINEERING INTERESTS",
+    "items": ["semiconductor technology", "chip design", "system architecture", "digital systems", "simulation", "design verification", "hardware development"]
+  },
+  {
+    "title": "CREATIVE INTERESTS",
+    "items": ["technical writing", "storytelling", "blogging", "long-form writing", "knowledge documentation", "educational content creation"]
+  }
+]

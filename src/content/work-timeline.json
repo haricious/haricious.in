@@ -1,0 +1,30 @@
+[
+  {
+    "place": "Senthil Stores",
+    "role": "Salesperson",
+    "date": "May 2017 - June 2018",
+    "responsibilities": ["customer assistance", "inventory handling", "cash transactions", "store organization"],
+    "lessons": ["consistency matters", "discipline compounds over time", "customers teach communication better than textbooks"]
+  },
+  {
+    "place": "Family Mart",
+    "role": "Salesperson",
+    "date": "May 2019 - June 2019",
+    "responsibilities": ["sales", "customer support", "inventory management", "shelf restocking"],
+    "lessons": ["every system depends on people", "smooth operations come from small processes working correctly"]
+  },
+  {
+    "place": "Sai Netpark",
+    "role": "Customer Service Operator Associate",
+    "date": "May 2021 - June 2021",
+    "responsibilities": ["government document services", "aadhaar services", "pan-related services", "document verification", "citizen assistance", "compliance handling"],
+    "lessons": ["accuracy matters", "documentation matters", "trust is built through responsibility"]
+  },
+  {
+    "place": "Malleswar Handlooms",
+    "role": "Packaging Associate",
+    "date": "June 2023 - September 2023",
+    "responsibilities": ["bundle packaging", "inventory management", "store operations"],
+    "lessons": ["supply chains are systems", "operations reveal hidden engineering principles", "workflow optimization exists everywhere"]
+  }
+]

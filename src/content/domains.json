@@ -1,0 +1,39 @@
+[
+  {
+    "title": "DIGITAL DESIGN & RTL",
+    "status": "ACTIVE",
+    "tags": ["digital-design", "verilog", "clock-domain-crossing"],
+    "copy": "Currently focused on RTL design patterns in Verilog, timing analysis, and synthesis constraints. Building fluency in writing synthesizable code vs simulation-only constructs.",
+    "learning": ["Clock domain crossing techniques", "Formal verification basics"],
+    "links": [
+      { "label": "UART project", "path": "/build-log/uart-transceiver-verilog" },
+      { "label": "ALU project", "path": "/build-log/4-bit-alu-basys3-fpga" }
+    ]
+  },
+  {
+    "title": "FPGA DEVELOPMENT",
+    "status": "ACTIVE",
+    "tags": ["fpga", "vivado", "synthesis"],
+    "copy": "Hands-on with Xilinx Basys3 and Altera DE10-Lite. Learning Vivado and Quartus flows. Understanding the gap between behavioral simulation and actual hardware behavior.",
+    "learning": ["Timing constraints (SDC)", "IP core integration"]
+  },
+  {
+    "title": "EMBEDDED SYSTEMS",
+    "status": "BUILDING",
+    "tags": ["embedded", "stm32", "datasheets"],
+    "copy": "Exploring bare-metal programming on ARM Cortex-M. Learning to read datasheets, configure peripherals via registers, and write drivers without HAL abstractions.",
+    "learning": ["STM32 peripheral drivers", "DMA configuration"]
+  },
+  {
+    "title": "SIGNAL PROCESSING",
+    "status": "FUNDAMENTALS",
+    "tags": ["dsp", "signal-processing", "matlab"],
+    "copy": "Building foundations in DSP - sampling theory, filter design, frequency domain analysis. Applying concepts in MATLAB before moving to hardware implementation."
+  },
+  {
+    "title": "COMPUTER ARCHITECTURE",
+    "status": "EXPLORING",
+    "tags": ["computer-architecture", "vlsi"],
+    "copy": "Starting to understand processor pipelines, memory hierarchies, and the hardware-software boundary. Reading Patterson & Hennessy alongside coursework."
+  }
+]

@@ -1,0 +1,299 @@
+[
+  {
+    "slug": "image-processing-seminar-dec-2024",
+    "type": "FIELD NOTE",
+    "title": "The moment a speaker made me feel like I was looking at a door I hadn't opened yet",
+    "date": "[2024.12.14]",
+    "location": "SBM College of Engineering & Technology, Tamil Nadu",
+    "tags": ["image-processing", "AI", "seminar", "inflection-point"],
+    "body": [
+      "Dr. Akila Gurunathan walked in and started talking about digital image processing like it was a living thing. Not a textbook chapter. A field in motion.",
+      "I was hosting the event, which meant I was also standing at the edge of it — half inside the talk, half managing the room. That split attention is its own kind of learning. You hear things twice: once as a listener, once as the person responsible for how it lands.",
+      "What stayed with me wasn't any single concept. It was the shape of the talk — the way she moved from pixel fundamentals to where AI is cracking open the entire pipeline. Convolution was no longer just a filter in a textbook. It was suddenly adjacent to things I recognized. Things I'd been curious about without knowing what to call the curiosity.",
+      "I left that hall with a problem I hadn't had when I walked in: a direction. Not a plan. Not a roadmap. Just a pull toward something. That's enough to work with."
+    ]
+  },
+  {
+    "slug": "matlab-onramp-2025",
+    "type": "FIELD NOTE",
+    "title": "MATLAB Onramp: a small, honest course that does exactly what it says",
+    "date": "[2025.01]",
+    "tags": ["matlab", "technical-computing", "tooling"],
+    "body": [
+      "No frills. That's the thing about the MATLAB Onramp. It doesn't dress itself up.",
+      "Most introductory courses try to sell you the destination before you've learned to walk. This one just shows you the syntax, hands you a few problems, and waits. You either get it or you go back.",
+      "What I got from it: a mental model for how MATLAB thinks about data. Matrices as first-class objects. Vectorized operations as the default reflex, not an optimization. The IDE as a scratchpad, not a ceremony.",
+      "It's a primer, not a curriculum. I knew that going in. But there's value in a thing that knows what it is and doesn't pretend to be more."
+    ]
+  },
+  {
+    "slug": "c-programming-basics-2025",
+    "type": "FIELD NOTE",
+    "title": "Going back to C — not because I had to, but because the gaps were showing",
+    "date": "[2025.01]",
+    "tags": ["C", "pointers", "programming-fundamentals"],
+    "body": [
+      "Flow control, variables, pointers. The unglamorous core of a language that doesn't forgive you for not understanding it.",
+      "Pointers are where most people decide to look away and hope it doesn't matter. It always matters. The moment you try to do anything serious in embedded or systems — anything close to hardware — pointers stop being optional.",
+      "I've written C before. But there's a difference between writing code that compiles and actually knowing what you wrote. This course was about closing that gap.",
+      "The most useful thing wasn't any single concept. It was being forced to slow down at the parts I usually skim. Variables have types that map to memory. Addresses are values. Dereferencing is not magic — it's just following a pointer to what it points at.",
+      "Simple. Expensive to misunderstand."
+    ]
+  },
+  {
+    "slug": "cloud-computing-session-2025",
+    "type": "FIELD NOTE",
+    "title": "What a senior DevOps engineer at AmEx taught me in one session",
+    "date": "[2025.01]",
+    "tags": ["cloud-computing", "devops", "industry-perspective"],
+    "body": [
+      "Mr. Jithin Kannan talked about cloud the way people talk about infrastructure when they've had to keep it alive at scale. Not the abstraction. The plumbing underneath it.",
+      "The thing that landed hardest: cloud isn't a destination you migrate to once and then forget. It's a set of decisions you're making continuously — about cost, latency, redundancy, who owns which failure.",
+      "As an ECE student thinking about hardware and embedded systems, cloud feels like the far end of the stack. But what this session made clear is that the boundary between silicon and services is getting thinner. The question isn't whether these worlds will intersect. It's how soon you want to be fluent in both."
+    ]
+  },
+  {
+    "slug": "python-workshop-pragyan-2025",
+    "type": "FIELD NOTE",
+    "title": "Two days of Python at NIT Trichy — what a workshop format forces you to do",
+    "date": "[2025.02.22]",
+    "tags": ["python", "workshop", "NIT-trichy", "pragyan"],
+    "body": [
+      "Two days. A room full of people. Problems you have to solve before the session moves on.",
+      "Workshop formats are unforgiving in a way that self-paced courses aren't. There's no pause button. If you don't keep up, the session moves without you and you're left reconstructing what happened from your notes.",
+      "What I found: I knew more Python than I thought I did, in some areas. And less in others. The gaps that showed up weren't syntax — syntax is searchable. The gaps were in problem decomposition. In knowing how to look at a task and carve it into pieces that Python can actually act on.",
+      "That's a different skill than knowing the language. And it's the one that the workshop actually sharpened."
+    ]
+  },
+  {
+    "slug": "bms-internship-start-jan-2026",
+    "type": "FIELD NOTE",
+    "title": "First day at Gandhigram: stepping into a real workspace changes the coordinates",
+    "date": "[2026.01.05]",
+    "tags": ["internship", "FPGA", "BMS", "gandhigram", "EKF"],
+    "series": { "name": "BMS Estimation — Gandhigram", "part": 1, "total": 5 }
+  },
+  {
+    "slug": "battery-fundamentals-module-1",
+    "type": "FIELD NOTE",
+    "title": "Battery University and the history I didn't know I needed",
+    "date": "[2026.01]",
+    "tags": ["batteries", "BMS", "OCV", "thevenin", "lithium-ion"],
+    "series": { "name": "BMS Estimation — Gandhigram", "part": 2, "total": 5 },
+    "body": [
+      "The first module wasn't Simulink or Kalman filters. It was history. How batteries evolved. Why lithium-ion became the default. What the tradeoffs actually were.",
+      "That turned out to be the right place to start.",
+      "OCV, internal resistance, Thevenin equivalent circuits — these concepts look dry in a textbook. But once you understand the electrochemistry they're approximating, they stop being abstract. They're simplifications you're choosing to make, with known costs and known limits.",
+      "Battery University does this well. It doesn't let you treat a cell as a black box. It makes you understand what's actually happening inside before it lets you model it.",
+      "One module down. The fundamentals are starting to connect into something coherent instead of sitting in separate mental compartments."
+    ]
+  },
+  {
+    "slug": "lead-acid-pivot",
+    "type": "FIELD NOTE",
+    "title": "Chemistry-agnostic: why switching to lead-acid didn't break the architecture",
+    "date": "[2026.01]",
+    "tags": ["lead-acid", "BMS", "SOC", "SOH", "safety-constraints"],
+    "series": { "name": "BMS Estimation — Gandhigram", "part": 3, "total": 5 },
+    "body": [
+      "For safety reasons, the internship scope shifted from lithium-ion to lead-acid. My first instinct was that this would break a lot of what I'd been building mentally.",
+      "It didn't.",
+      "The joint SOC–SOH estimation framework is designed to be chemistry-agnostic. The core algorithms stay the same. The Extended Kalman Filter doesn't care what chemistry it's observing — it cares about the model and the noise statistics. What changes between chemistries are the parameters and the lookup tables. Swap those in, recalibrate, and the architecture holds.",
+      "That's a useful thing to understand: when a design is actually flexible, and when it only looks flexible until you stress it. This one held."
+    ]
+  },
+  {
+    "slug": "bms-simulation-matlab",
+    "type": "FIELD NOTE",
+    "title": "Building a BMS from scratch in Simulink: where control logic meets physics",
+    "date": "[2026.01]",
+    "tags": ["matlab", "simulink", "simscape", "coulomb-counting", "CC-CV"],
+    "series": { "name": "BMS Estimation — Gandhigram", "part": 4, "total": 5 },
+    "body": [
+      "There's a moment in Simulink where a model starts to look like a system instead of a diagram. The control logic is there. The thermal model is there. The physics is there. And they're all talking to each other through signal lines that carry real units.",
+      "That moment took most of the day to reach.",
+      "Simscape's battery pack models are useful for getting a thermal-aware baseline quickly. Coulomb counting for SOC estimation is simple and revealing — simple because the math is integration, revealing because you can immediately see how error accumulates over time without a correction mechanism.",
+      "CC–CV charging is one of those algorithms that looks obvious once you understand it and non-obvious until you do. Constant current until voltage limit, then hold voltage and watch current taper. The control logic is clean. The interesting part is knowing when to transition and how to handle edge cases at temperature extremes.",
+      "By the end of the session, the simulation was running safe charge-discharge cycles. Not production-grade. But structurally honest."
+    ]
+  },
+  {
+    "slug": "thevenin-model-iv-test",
+    "type": "FIELD NOTE",
+    "title": "Building the model, then testing the real cell — the gap between them is the learning",
+    "date": "[2026.01]",
+    "tags": ["thevenin-model", "lead-acid", "I-V-characteristics", "parameter-extraction"],
+    "series": { "name": "BMS Estimation — Gandhigram", "part": 5, "total": 5 },
+    "body": [
+      "The Thevenin equivalent circuit model is clean on paper. Two RC branches, a series resistance, an OCV source. You can write the state equations in a few lines.",
+      "Building it from scratch in Simulink is a different exercise. You have to make choices at every node: what the initial conditions are, how you're linking OCV to SOC, where the thermal dependence enters. The model isn't given to you — you construct it from assumptions, and the assumptions have consequences.",
+      "After the simulation came the physical test. A 12V 7Ah lead-acid gel cell. We collected I–V data, plotted it, and compared the behavior to what the model predicted.",
+      "The curves didn't match perfectly. They never do. But the shape was right, and the deviations were interpretable — not random noise, but systematic offsets that pointed to where the model was simplifying reality. That's the point of the exercise. A model you can't interrogate is just a black box with extra steps.",
+      "Need to move faster from here. The data is there. The framework is there. The next step is getting the EKF running on top of it."
+    ]
+  },
+  {
+    "slug": "soc-soh-ekf-publication",
+    "type": "PROJECT NOTE",
+    "title": "Joint SOC–SOH Estimation using EKF on a 12V 7Ah lead-acid cell",
+    "date": "[2026.01.19]",
+    "affiliation": "The Gandhigram Rural Institute",
+    "tags": ["EKF", "SOC", "SOH", "BMS", "matlab", "simulink", "lead-acid"],
+    "body": [
+      "Extended Kalman Filter running on a Thevenin equivalent circuit model. 12V, 7Ah lead-acid battery. Joint state estimation for both SOC and SOH — tracking capacity fade and internal resistance growth simultaneously.",
+      "The EKF's job here is to correct the open-loop Coulomb counting estimate using voltage measurements as feedback. Without that correction, integration error accumulates. With it, the estimate stays bounded.",
+      "The model accounts for uncertainty in two places: process noise in the state equations, and measurement noise in the voltage reading. Tuning those covariance matrices is where most of the calibration effort lives.",
+      "Result: SOC and SOH tracking that's more robust to modelling uncertainty than a pure Coulomb counting or OCV-lookup approach. Not a finished system. A working architecture."
+    ]
+  },
+  {
+    "slug": "hdlbits-day-one",
+    "type": "FIELD NOTE",
+    "title": "HDLBits: the LeetCode for hardware — except the bugs don't just fail tests, they become circuits",
+    "date": "[2026.06.06]",
+    "tags": ["verilog", "RTL", "HDLBits", "digital-design", "dataflow-modelling"],
+    "series": { "name": "RTL Build Log", "part": 1 },
+    "body": [
+      "The analogy holds better than I expected. HDLBits is structured problem-solving with immediate feedback, exactly like algorithmic practice platforms. The difference is what you're building.",
+      "Software bugs fail tests. Hardware bugs become circuits. A wrong always block doesn't throw an exception — it synthesizes into logic that quietly does the wrong thing, and you might not find out until a waveform tells you three hours later.",
+      "Day one was wires, nets, and vectors. The interesting part wasn't getting the problems accepted. It was tracing signal propagation: following a value through the logic and asking why a particular output exists at a particular time.",
+      "I spent more time reading the circuit than writing code. That felt like the right instinct.",
+      "Dataflow modelling for now. The plan maps out from here."
+    ]
+  },
+  {
+    "slug": "public-build-log-commitment",
+    "type": "META NOTE",
+    "title": "Why I'm logging this publicly — and the one rule that makes it honest",
+    "date": "[2026.06.06]",
+    "tags": ["build-log", "learning-process", "RTL", "discipline"],
+    "series": { "name": "RTL Build Log", "part": 0 },
+    "body": [
+      "Not for accountability. Not for motivation. For traceability.",
+      "I wanted a record of what got built, when, and why. The commit history becomes the log. The log becomes the evidence.",
+      "One rule: no AI-written code. Every line gets typed. If I don't understand it, I learn it first. AI stays on the whiteboard — for reasoning, for explanation, for design review. Not in the source files.",
+      "This isn't a performance of discipline. It's a structural decision about what kind of engineer I'm trying to become. Faster output is not the goal. Owning the stack is.",
+      "One module at a time."
+    ]
+  },
+  {
+    "slug": "behavioral-modelling-blocking-nonblocking",
+    "type": "FIELD NOTE",
+    "title": "The = and <= problem: two operators, almost identical, completely different hardware",
+    "date": "[2026.06.07]",
+    "tags": ["verilog", "behavioral-modelling", "blocking", "non-blocking", "RTL"],
+    "series": { "name": "RTL Build Log", "part": 2 },
+    "body": [
+      "Behavioral modelling sits at the highest abstraction level. You describe intent, not wiring. The synthesizer figures out the gates.",
+      "The constructs are straightforward: initial, always, if-else, case. I used them to build a mux, a D flip-flop, and a BCD-to-seven-segment decoder. None of this looked complicated going in.",
+      "Then blocking and non-blocking assignments appeared in the same always block and produced different hardware from identical-looking logic.",
+      "= is blocking. The statement executes, the value updates, the next line sees the new value. Sequential, like software.",
+      "<= is non-blocking. All right-hand sides evaluate first. All assignments happen simultaneously at the end of the time step. Hardware, where everything exists in parallel.",
+      "The synthesizer infers latches from one and flip-flops from the other, depending on context. Mixing them carelessly produces circuits that simulate correctly and synthesize wrong.",
+      "A lot of RTL is less about writing logic and more about understanding when that logic actually exists. This is one of the sharper versions of that lesson."
+    ]
+  },
+  {
+    "slug": "priority-encoder-module-instantiation",
+    "type": "FIELD NOTE",
+    "title": "Module instantiation: the concept that sits at the center of how larger systems get assembled",
+    "date": "[2026.06.08]",
+    "tags": ["verilog", "module-instantiation", "priority-encoder", "shift-register", "DFF"],
+    "series": { "name": "RTL Build Log", "part": 3 },
+    "body": [
+      "Built an 8x3 priority encoder. DFF variants with async and sync reset — including tracking true and complement outputs through the reset condition. Shift register from a chain of DFFs.",
+      "The exercises were clean. Module instantiation was not.",
+      "It's one of those concepts that's easy to use and harder to truly understand. The syntax is simple — named connections or positional connections, your choice. The hard part is understanding what's actually happening: you're not calling a function, you're placing hardware. The instance exists in the design as a physical thing. It has ports. Those ports connect to wires that carry signals between real logic.",
+      "When you instantiate incorrectly — wrong port order, mismatched widths, unconnected outputs — the design either fails DRC or, worse, synthesizes silently into something wrong.",
+      "I'm not moving past this until it's solid. Module instantiation is too central to how larger designs get built. A shaky foundation here becomes expensive when the system is 10 modules deep."
+    ]
+  },
+  {
+    "slug": "behavioral-modelling-revision-implementations",
+    "type": "FIELD NOTE",
+    "title": "Revision pass: what it means to translate a logic diagram into Verilog without just copying syntax",
+    "date": "[2026.06.11]",
+    "tags": ["verilog", "mux", "counter", "decoder", "BCD", "behavioral-modelling"],
+    "series": { "name": "RTL Build Log", "part": 4 },
+    "body": [
+      "Streak broke for a couple of days. Not worth dwelling on. Back.",
+      "Did a full revision pass through behavioral modelling. It reads cleaner now than it did at the start — not because the concepts changed, but because I've seen more failure modes. The gaps in understanding are more visible when you know what misuse looks like.",
+      "Module instantiation finally clicked. Not just using it — explaining it from first principles. That's the bar I'd set and hadn't hit yet.",
+      "Implementations this round: glitch-free 2-to-1 mux, synchronous up-counter, 2-to-4 decoder, BCD-to-seven-segment. Each one was a translation exercise — take the logic diagram, understand it, write the Verilog that describes the same behavior without just pattern-matching syntax.",
+      "The compressed version of the last few days: behavioral modelling is describing hardware as intent. always blocks define when logic reacts. if-else builds priority. case builds selection. = executes sequentially, <= updates in parallel. Simple taxonomy. Expensive to misapply."
+    ]
+  },
+  {
+    "slug": "gate-level-arithmetic-circuits",
+    "type": "FIELD NOTE",
+    "title": "Full adder, full subtractor — not complex, but foundational in a way that earns patience",
+    "date": "[2026.06.12]",
+    "tags": ["verilog", "gate-level", "arithmetic-circuits", "full-adder", "RTL"],
+    "series": { "name": "RTL Build Log", "part": 5 },
+    "body": [
+      "Gate-level modelling lectures wrapped. Arithmetic circuits assignment done.",
+      "Full adder. Full subtractor. These are not impressive circuits. They are the circuits that quietly appear inside everything once designs start scaling. The sum and carry logic of a full adder shows up in ALUs, in address computation, in almost any datapath that does arithmetic.",
+      "The value of building them isn't the circuit. It's the discipline of working at gate level — understanding which primitive you're instantiating, what its truth table is, and how the combination produces behavior that a higher-level description would just assert.",
+      "You can write a full adder in one behavioral line. You can also write it gate by gate and understand every transition. Both produce the same hardware. Only one of them gives you the intuition you need when something breaks at synthesis."
+    ]
+  },
+  {
+    "slug": "switch-level-cmos-module-instantiation-click",
+    "type": "FIELD NOTE",
+    "title": "The moment module instantiation clicked — and seeing logic from the transistor side",
+    "date": "[2026.06.12]",
+    "tags": ["verilog", "switch-level", "CMOS", "module-instantiation", "johnson-counter", "ripple-carry-adder"],
+    "series": { "name": "RTL Build Log", "part": 6 },
+    "body": [
+      "Switch-level modelling: seeing logic from the transistor side. CMOS primitives in Verilog. Inverter from a PMOS and NMOS in series. NAND from two NMOS in series with PMOS in parallel. Three or four transistors that become the foundation for every abstraction built above them.",
+      "The abstraction stack in digital design runs from transistors to gates to RTL to architecture. Most ECE courses start somewhere in the middle. Actually building at the switch level and then going up is a different kind of understanding.",
+      "And module instantiation finally clicked. Not just using it — understanding hierarchy, reuse, explicit vs implicit connections, and what it means for a module to be a black box with defined I/O that you place in a design rather than call like a function.",
+      "Built a full adder from two half adders using instantiation. Johnson counter from DFFs. Ripple carry adder from chained full adders. 8:1 mux from 2:1 mux blocks.",
+      "The pattern that's emerging: most larger systems are smaller verified blocks stacked in increasingly creative ways. The creativity is in the architecture. The correctness comes from the blocks."
+    ]
+  },
+  {
+    "slug": "vivado-ip-integrator-schematic",
+    "type": "FIELD NOTE",
+    "title": "Schematic design entry: the same circuits, but now you can see them instead of reading them",
+    "date": "[2026.06.12]",
+    "tags": ["vivado", "IP-integrator", "schematic", "block-design", "full-adder", "ripple-carry"],
+    "series": { "name": "RTL Build Log", "part": 7 },
+    "body": [
+      "Spent time away from writing RTL and used Vivado's IP Integrator to build in schematic form. Full adder from two half adders. Ripple carry adder through block design.",
+      "Didn't expect to find this mode as useful as I did.",
+      "When you've already built something in Verilog, seeing the same design assembled visually hits differently. The signal connections you wrote as port mappings become literal wires you can trace with your eye. The hierarchy you described in text becomes physical containment in the canvas.",
+      "The interesting question it raised: when does schematic entry make more sense than RTL? Not instead of — alongside. The IP Integrator is useful for system-level integration, for quickly wiring together verified IP blocks, for design exploration at a level where the behavioral details are already solved.",
+      "RTL is where you specify behavior. Block design is where you assemble systems. Both are real tools. Still figuring out where the line sits between them."
+    ]
+  },
+  {
+    "slug": "barrel-shifter-block-design",
+    "type": "FIELD NOTE",
+    "title": "Assignment 19: a barrel shifter that looked simple until the connections started multiplying",
+    "date": "[2026.06.12]",
+    "tags": ["vivado", "barrel-shifter", "block-design", "verification", "waveform"],
+    "series": { "name": "RTL Build Log", "part": 8 },
+    "body": [
+      "The barrel shifter looked approachable. Then the connections multiplied.",
+      "A barrel shifter shifts N bits by a selectable amount in a single clock cycle — no iterative shifting, all paths computed in parallel. The logic is a set of mux stages, one per bit position, each selecting between the shifted and unshifted path based on the shift amount bits.",
+      "Building it in block design meant wiring those mux stages by hand. Each connection is an individual decision. Each incorrect connection propagates an incorrect signal that might not manifest until you check the output for a specific shift amount.",
+      "A few wrong turns. A lot of staring at the schematic. Eventually the waveform lined up exactly.",
+      "The observation that keeps surfacing: debugging logic visually is different from debugging RTL, but the underlying process is the same. You have a model of what the circuit should do. You have evidence of what it actually did. The gap between them is the problem."
+    ]
+  },
+  {
+    "slug": "8x1-mux-from-4x1-blocks",
+    "type": "FIELD NOTE",
+    "title": "Verification is not the afterthought — it's half the job",
+    "date": "[2026.06.12]",
+    "tags": ["vivado", "MUX", "block-design", "verification", "waveform"],
+    "series": { "name": "RTL Build Log", "part": 9 },
+    "body": [
+      "8x1 MUX from 4x1 MUX blocks in IP Integrator. Done.",
+      "The build was straightforward. The verification took longer than expected — not because anything was wrong, but because proving it's right requires checking enough input combinations that the structure of the logic is actually exercised, not just the easy paths.",
+      "This is the thing I keep learning in different forms: building the logic is one part of the job. Proving it behaves exactly as intended is a different part, and it's where most of the real understanding happens.",
+      "Every waveform is a conversation between what you thought you built and what you actually built. The two don't always agree. When they do, it's not luck — it's verification."
+    ]
+  }
+]

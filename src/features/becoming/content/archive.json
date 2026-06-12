@@ -1,0 +1,454 @@
+{
+  "journey": [
+    {
+      "id": "first-circuit",
+      "year": "2019",
+      "date": "[2019.06.12]",
+      "title": "First circuit that made sense",
+      "story": "A small LED circuit made electricity feel less like a chapter and more like something I could reason about.",
+      "lessons": ["Every system needs a source, a path, and a reason to exist.", "The simplest circuit can still teach cause and effect."],
+      "challenges": ["Understanding why current needs a complete loop.", "Remembering that components have limits."],
+      "breakthroughs": ["The moment the LED turned on made abstraction visible."],
+      "images": [],
+      "references": ["basic electronics notes"],
+      "tags": ["electronics", "first-build", "curiosity"]
+    },
+    {
+      "id": "arduino-discovery",
+      "year": "2021",
+      "date": "[2021.08.20]",
+      "title": "Arduino became the bridge",
+      "story": "Microcontrollers connected code, pins, sensors, and visible behavior. It became a gentle doorway into embedded systems.",
+      "lessons": ["Software becomes more honest when it has to move hardware.", "Debugging begins at the boundary between assumption and measurement."],
+      "challenges": ["Wiring mistakes.", "Copying examples before fully understanding them."],
+      "breakthroughs": ["A blinking LED became a clocked signal I could control."],
+      "images": [],
+      "references": ["Arduino documentation", "serial monitor experiments"],
+      "tags": ["arduino", "embedded", "learning-process"]
+    },
+    {
+      "id": "joined-ece",
+      "year": "2023",
+      "date": "[2023.09.01]",
+      "title": "Joined Electronics and Communication Engineering",
+      "story": "ECE gave the curiosity a direction: signals, circuits, digital logic, devices, and systems started joining into one map.",
+      "lessons": ["A subject becomes useful when I can place it inside a system.", "Engineering is not a title. It is a way of tightening a mental model."],
+      "challenges": ["Connecting classroom theory to real artifacts.", "Learning how to study consistently."],
+      "breakthroughs": ["Digital electronics made hardware feel programmable."],
+      "images": [],
+      "references": ["college coursework", "digital electronics lab"],
+      "tags": ["ece", "digital-design", "systems-thinking"]
+    },
+    {
+      "id": "verilog-start",
+      "year": "2024",
+      "date": "[2024.02.10]",
+      "title": "Started learning Verilog",
+      "story": "Verilog changed the question from writing instructions to describing hardware that exists across time.",
+      "lessons": ["Not every line of code is software.", "Timing is part of the design, not decoration around it."],
+      "challenges": ["Thinking in registers and clocks instead of sequential programs.", "Separating simulation behavior from synthesizable hardware."],
+      "breakthroughs": ["FSMs made behavior feel architectural."],
+      "images": [],
+      "references": ["Harris and Harris", "ModelSim waveforms"],
+      "tags": ["verilog", "rtl", "fsm", "digital-design"]
+    },
+    {
+      "id": "fpga-board-disagreed",
+      "year": "2024",
+      "date": "[2024.02.28]",
+      "title": "The FPGA board disagreed",
+      "story": "A simulation passed, but hardware exposed noisy inputs, timing assumptions, and an incomplete view of the real system.",
+      "lessons": ["Simulation is evidence under assumptions.", "Hardware has no obligation to match a friendly testbench."],
+      "challenges": ["Switch bounce.", "Clock-domain assumptions.", "Reading synthesis warnings properly."],
+      "breakthroughs": ["Failure became a debugging map instead of a personal verdict."],
+      "images": [],
+      "references": ["Vivado synthesis report", "Basys3 tests"],
+      "tags": ["fpga", "failure-log", "synthesis", "debugging"]
+    },
+    {
+      "id": "rtl-direction",
+      "year": "2026",
+      "date": "[2026.01.10]",
+      "title": "RTL and chip design became the direction",
+      "story": "The long-term goal became clearer: learn how digital ideas become reliable hardware and eventually silicon.",
+      "lessons": ["Direction appears through repeated attraction.", "Documentation turns scattered learning into a usable system."],
+      "challenges": ["Finding the right depth for fundamentals.", "Building proof of capability while still learning."],
+      "breakthroughs": ["The website itself became a learning archive, not only a portfolio."],
+      "images": [],
+      "references": ["VLSI notes", "RTL project plans"],
+      "tags": ["rtl", "vlsi", "chip-design", "becoming"]
+    }
+  ],
+  "failures": [
+    {
+      "id": "simulation-board-mismatch",
+      "category": "project failure",
+      "date": "[2024.02.28]",
+      "title": "Simulation passed, board failed",
+      "whatHappened": "The ALU behaved correctly in ModelSim but produced unstable LED outputs on the FPGA board.",
+      "whyItFailed": "External inputs were treated as clean synchronous signals. The real switches bounced and crossed into clocked logic without conditioning.",
+      "lessons": ["Input conditioning matters.", "A clean waveform can hide a missing assumption.", "Synthesis reports are part of the design conversation."],
+      "different": "Synchronize and debounce external inputs before trusting them, then test with intentionally unfriendly timing.",
+      "tags": ["fpga", "debugging", "synthesis"]
+    },
+    {
+      "id": "mock-vlsi-interview",
+      "category": "interview rejection",
+      "date": "[2024.01.30]",
+      "title": "First mock VLSI interview exposed gaps",
+      "whatHappened": "Basic questions around timing, setup and hold, and Verilog semantics showed that recognition was not the same as understanding.",
+      "whyItFailed": "I had studied definitions without building enough examples where the concepts mattered.",
+      "lessons": ["Interviews reveal model depth.", "Confidence should come from explanation and implementation, not familiarity."],
+      "different": "Prepare with small circuits, timing sketches, and spoken explanations instead of only notes.",
+      "tags": ["vlsi", "interview", "learning-process"]
+    },
+    {
+      "id": "abandoned-dashboard",
+      "category": "abandoned idea",
+      "date": "[2024.03.05]",
+      "title": "An overdesigned project dashboard",
+      "whatHappened": "I tried to build a big dashboard before the content system was clear.",
+      "whyItFailed": "The interface was solving presentation before the archive had stable data.",
+      "lessons": ["Architecture follows content.", "A system should start with the smallest real workflow."],
+      "different": "Define the content model first, then build the interface around real entries.",
+      "tags": ["documentation", "architecture", "scope-control"]
+    }
+  ],
+  "sourceCode": {
+    "versions": [
+      { "version": "Hari v1.0", "label": "Curious child", "date": "early build", "changes": ["Asked how things worked.", "Collected small observations before knowing they were engineering habits."] },
+      { "version": "Hari v2.0", "label": "Discovered electronics", "date": "pre-college", "changes": ["Started seeing circuits as systems.", "Learned that small components can create visible behavior."] },
+      { "version": "Hari v3.0", "label": "Started building projects", "date": "college year 1", "changes": ["Moved from watching to making.", "Learned that unfinished projects still teach architecture."] },
+      { "version": "Hari v4.0", "label": "Learning RTL", "date": "current", "changes": ["Thinking in clocks, state, timing, synthesis, and verification.", "Building toward chip design through documented practice."] }
+    ],
+    "dependencies": ["parents", "mentors", "books", "failures", "internet", "friends", "datasheets", "tool warnings"],
+    "configuration": [
+      ["Current Goal", "Become capable of RTL and chip-design work through projects, notes, and fundamentals."],
+      ["Current Learning Focus", "Digital design, Verilog, FPGA flows, timing, and VLSI fundamentals."],
+      ["Current Curiosity", "How an idea becomes gates, then timing paths, then silicon."],
+      ["Current Challenges", "Depth, consistency, internship preparation, and choosing projects with real learning value."],
+      ["Current Direction", "Build, break, document, explain, repeat."]
+    ]
+  },
+  "knowledgeTree": [
+    {
+      "id": "digital-design",
+      "title": "Digital Design",
+      "description": "The foundation for reasoning about logic, timing, state, and hardware behavior.",
+      "projects": ["Traffic Light Controller FSM", "4-bit ALU on Basys3 FPGA"],
+      "lessons": ["Boolean logic becomes useful when connected to constraints.", "State machines are architecture in miniature."],
+      "resources": ["Digital Design and Computer Architecture", "course notes"],
+      "prerequisites": [],
+      "children": ["boolean-algebra", "fsm-design", "verilog", "fpga", "timing-analysis"]
+    },
+    {
+      "id": "boolean-algebra",
+      "title": "Boolean Algebra",
+      "description": "The language of digital decisions.",
+      "projects": ["4-bit ALU on Basys3 FPGA"],
+      "lessons": ["Simplification is not only math. It changes hardware shape."],
+      "resources": ["K-map practice", "logic gate labs"],
+      "prerequisites": ["digital-design"],
+      "children": []
+    },
+    {
+      "id": "fsm-design",
+      "title": "FSM Design",
+      "description": "A way to design behavior over time using states and transitions.",
+      "projects": ["Traffic Light Controller FSM", "UART Transceiver in Verilog"],
+      "lessons": ["Naming states clearly makes debugging easier.", "State encoding can affect synthesis results."],
+      "resources": ["Moore and Mealy FSM notes"],
+      "prerequisites": ["boolean-algebra"],
+      "children": []
+    },
+    {
+      "id": "verilog",
+      "title": "Verilog",
+      "description": "A hardware description language for expressing synthesizable digital systems.",
+      "projects": ["UART Transceiver in Verilog"],
+      "lessons": ["Simulation-only constructs can create false confidence.", "Nonblocking assignments are part of thinking in clocked logic."],
+      "resources": ["ModelSim", "synthesis style guides"],
+      "prerequisites": ["digital-design", "fsm-design"],
+      "children": ["rtl-design"]
+    },
+    {
+      "id": "fpga",
+      "title": "FPGA",
+      "description": "A place where digital designs meet hardware reality before becoming silicon.",
+      "projects": ["4-bit ALU on Basys3 FPGA", "UART Transceiver in Verilog"],
+      "lessons": ["The board reveals assumptions that simulation did not include."],
+      "resources": ["Vivado", "Basys3 documentation"],
+      "prerequisites": ["verilog"],
+      "children": []
+    },
+    {
+      "id": "timing-analysis",
+      "title": "Timing Analysis",
+      "description": "Understanding whether a design can reliably meet clocked behavior.",
+      "projects": ["UART Transceiver in Verilog"],
+      "lessons": ["Timing is not a final report. It is a design constraint from the beginning."],
+      "resources": ["Vivado timing reports", "CDC notes"],
+      "prerequisites": ["fpga", "verilog"],
+      "children": []
+    },
+    {
+      "id": "rtl-design",
+      "title": "RTL Design",
+      "description": "Register-transfer thinking: data movement, control, state, and timing.",
+      "projects": ["UART Transceiver in Verilog"],
+      "lessons": ["A good RTL block is understandable in both code and waveform."],
+      "resources": ["RTL coding guidelines"],
+      "prerequisites": ["verilog", "timing-analysis"],
+      "children": []
+    }
+  ],
+  "heatmap": [
+    { "date": "2024-01-30", "topic": "VLSI interview basics", "intensity": 2, "tags": ["vlsi", "interview"] },
+    { "date": "2024-02-10", "topic": "Verilog fundamentals", "intensity": 4, "tags": ["verilog", "rtl"] },
+    { "date": "2024-02-14", "topic": "Sequential logic reading", "intensity": 3, "tags": ["digital-design", "fsm"] },
+    { "date": "2024-02-24", "topic": "FSM traffic controller", "intensity": 5, "tags": ["verilog", "fsm"] },
+    { "date": "2024-02-28", "topic": "FPGA debug", "intensity": 5, "tags": ["fpga", "debugging"] },
+    { "date": "2024-03-03", "topic": "ALU synthesis", "intensity": 4, "tags": ["fpga", "synthesis"] },
+    { "date": "2024-03-07", "topic": "Setup and hold time", "intensity": 3, "tags": ["timing", "digital-design"] },
+    { "date": "2024-03-10", "topic": "Debugging process note", "intensity": 4, "tags": ["writing", "learning-process"] },
+    { "date": "2024-03-12", "topic": "UART transceiver", "intensity": 5, "tags": ["uart", "verilog"] },
+    { "date": "2024-03-15", "topic": "CDC and STM32 planning", "intensity": 4, "tags": ["cdc", "embedded"] }
+  ],
+  "currentlyBecoming": [
+    ["Currently Learning", "Clock-domain crossing, timing reports, RTL style, and VLSI fundamentals."],
+    ["Currently Building", "A living archive that makes learning visible instead of only listing outcomes."],
+    ["Currently Reading", "Digital design notes, datasheets, and processor architecture material."],
+    ["Currently Exploring", "How to turn project work into proof of engineering thinking."],
+    ["Currently Struggling With", "Choosing the right depth without freezing in research mode."],
+    ["Current Goals", "Document projects honestly, prepare for hardware internships, and build stronger fundamentals."],
+    ["Current Experiments", "Small RTL blocks, better debug logs, and interactive archive systems."]
+  ],
+  "dreams": [
+   {
+  "id": "neuromorphic-computing",
+  "title": "Build a Brain in Silicon",
+  "why": "Neuromorphic computing represents a fundamentally different approach to computation, inspired by how biological brains process information. The idea of creating hardware that can learn, adapt, and operate with extreme energy efficiency sits at the intersection of electronics, computer architecture, artificial intelligence, and neuroscience.",
+  "milestones": [
+    "strengthen digital design and RTL fundamentals",
+    "complete advanced FPGA and hardware projects",
+    "learn computer architecture and processor design",
+    "study neural networks and machine learning fundamentals",
+    "understand spiking neural networks (SNNs)",
+    "explore neuromorphic hardware architectures",
+    "study research papers on brain-inspired computing",
+    "experiment with implementing neural models on FPGA",
+    "contribute to neuromorphic computing research projects",
+    "design and prototype a custom neuromorphic accelerator"
+  ]
+},
+    {
+  "id": "computational-architecture",
+  "title": "Refine the Computational Architecture for Gaming and AI",
+  "why": "Modern gaming and artificial intelligence push the limits of computation, memory systems, parallel processing, and hardware efficiency. Understanding and improving the architectures that power these workloads offers an opportunity to contribute to the future of high-performance computing, intelligent systems, and next-generation hardware platforms.",
+  "milestones": [
+    "master digital design and RTL development",
+    "study computer architecture in depth",
+    "understand modern CPU microarchitecture",
+    "learn GPU architecture and parallel processing",
+    "study memory systems, caches, and interconnects",
+    "explore AI accelerator architectures",
+    "build processor and accelerator projects on FPGA",
+    "analyze performance bottlenecks in gaming workloads",
+    "study hardware-software co-design principles",
+    "research next-generation computational architectures",
+    "design custom architectures optimized for gaming and AI workloads"
+  ]
+},
+   {
+  "id": "engineering-professor",
+  "title": "Become a Professor and Mentor Future Engineers",
+  "why": "Engineering knowledge becomes most valuable when it is passed on. Beyond building systems and contributing to technology, I want to help shape the next generation of engineers by teaching, mentoring, and making complex concepts accessible. A career in academia would allow me to combine technical expertise, research, and education to create lasting impact beyond individual projects.",
+  "milestones": [
+    "develop deep expertise in digital design and computer architecture",
+    "gain industry experience in RTL, VLSI, or chip design",
+    "contribute to significant engineering projects",
+    "build a strong portfolio of technical writing and educational content",
+    "mentor students and aspiring engineers",
+    "develop teaching and public speaking skills",
+    "pursue advanced studies and research opportunities",
+    "publish technical articles, papers, or learning resources",
+    "establish expertise within a specialized engineering domain",
+    "transition into teaching, research, and academic mentorship in my 40s"
+  ]
+    },
+    {
+  "id": "cenaq",
+  "title": "Create and Advance CENAQ",
+  "why": "CENAQ represents a vision of bringing together Communication, Electronics, Nanotechnology, Artificial Intelligence, and Quantum Technology into a unified interdisciplinary domain. The goal is to explore how these fields converge to shape the next generation of computing, intelligent systems, advanced materials, communication networks, and emerging technologies that will define the future.",
+  "milestones": [
+    "develop strong expertise in electronics and communication engineering",
+    "master digital design, RTL development, and computer architecture",
+    "study artificial intelligence and machine learning fundamentals",
+    "explore advanced communication systems and network architectures",
+    "learn nanotechnology fundamentals and nanoelectronics",
+    "study quantum computing principles and quantum information systems",
+    "identify convergence points between the five domains",
+    "publish frameworks and ideas defining the CENAQ domain",
+    "build interdisciplinary projects combining multiple CENAQ fields",
+    "establish a knowledge archive and research roadmap for CENAQ",
+    "grow CENAQ into a recognized framework for future technological innovation"
+  ],
+  "status": "vision"
+}
+  ],
+  "butterflyEffect": [
+    { "id": "youtube-video", "title": "One YouTube video", "next": "arduino", "story": "A small recommendation made electronics feel approachable." },
+    { "id": "arduino", "title": "Arduino", "next": "electronics", "story": "Code and hardware started talking to each other." },
+    { "id": "electronics", "title": "Electronics", "next": "ece", "story": "The curiosity became a field of study." },
+    { "id": "ece", "title": "ECE", "next": "digital-design", "story": "Signals, devices, logic, and systems became connected." },
+    { "id": "digital-design", "title": "Digital Design", "next": "rtl-design", "story": "Gates and flip-flops became architecture." },
+    { "id": "rtl-design", "title": "RTL Design", "next": "chip-design", "story": "The direction sharpened toward hardware that can become silicon." },
+    { "id": "chip-design", "title": "Chip Design", "next": null, "story": "The dream is still under construction." }
+  ],
+  "letters": [
+    {
+      "id": "letter-2024",
+      "year": "2024",
+      "title": "To the version still guessing",
+      "letter": "Keep building the small things. The project does not need to impress everyone to teach you something real.",
+      "futureResponse": "The small things became the map."
+    },
+    {
+      "id": "letter-2026",
+      "year": "2026",
+      "title": "To the version preparing for silicon",
+      "letter": "Do not confuse being early with being unqualified to begin. Keep making evidence.",
+      "futureResponse": "Waiting for the next commit."
+    }
+  ],
+  "whatChangedMe": [
+    {
+      "id": "harris-book",
+      "category": "Books",
+      "date": "2024",
+      "title": "Digital Design and Computer Architecture",
+      "description": "The book helped connect gates, sequential logic, state machines, and computer architecture into one connected engineering map.",
+      "whyItChangedMe": "It made digital design feel like a language for building systems instead of a set of isolated exam topics.",
+      "changedAfterward": "I started treating Verilog, FSMs, ALUs, and timing as connected parts of the same direction.",
+      "impact": "It pushed my interest toward RTL, processor architecture, and chip design.",
+      "chain": ["Book", "Changed how I viewed engineering", "Started learning digital design", "Discovered Verilog", "Developed interest in RTL"],
+      "tags": ["book", "digital-design", "rtl"]
+    },
+    {
+      "id": "simulation-failure",
+      "category": "Failures",
+      "date": "[2024.02.28]",
+      "title": "The board disagreed with my simulation",
+      "description": "The FPGA implementation failed even though the simulation looked correct.",
+      "whyItChangedMe": "It showed me that engineering is not about proving my first idea right. It is about letting reality correct the model.",
+      "changedAfterward": "I started reading synthesis warnings, thinking about inputs, and respecting timing assumptions.",
+      "impact": "Failure became part of the documentation system instead of something to hide.",
+      "chain": ["Failed FPGA output", "Questioned assumptions", "Studied switch bounce and synchronization", "Improved debugging habits", "Started failure archive thinking"],
+      "tags": ["failure", "fpga", "debugging"]
+    },
+    {
+      "id": "retail-work",
+      "category": "Experiences",
+      "date": "2017 - 2023",
+      "title": "Working before engineering",
+      "description": "Retail, customer service, and packaging work built habits around responsibility, communication, accuracy, and repeated process.",
+      "whyItChangedMe": "It taught me that systems are not only technical. People, operations, documentation, and reliability matter too.",
+      "changedAfterward": "I began noticing engineering patterns in ordinary work: constraints, workflows, feedback loops, and failure points.",
+      "impact": "It shaped the way I think about discipline and systems.",
+      "chain": ["Early work", "Learned consistency", "Observed operations", "Saw systems everywhere", "Carried that thinking into engineering"],
+      "tags": ["work", "systems-thinking", "discipline"]
+    },
+    {
+      "id": "youtube-electronics",
+      "category": "Videos",
+      "date": "early curiosity",
+      "title": "A small electronics video",
+      "description": "One video made electronics feel approachable enough to try instead of only admire.",
+      "whyItChangedMe": "It lowered the barrier between watching and building.",
+      "changedAfterward": "I moved toward Arduino, circuits, and eventually ECE.",
+      "impact": "It became one of the small causes behind a much larger direction.",
+      "chain": ["Video", "Arduino curiosity", "Electronics", "ECE", "Digital design"],
+      "tags": ["video", "arduino", "electronics"]
+    },
+    {
+      "id": "mentor-conversations",
+      "category": "Conversations",
+      "date": "ongoing",
+      "title": "Mentor conversations about direction",
+      "description": "Conversations around projects, internships, and technical depth helped me see that the path needs evidence, not only ambition.",
+      "whyItChangedMe": "They turned vague interest into a clearer plan: build, document, explain, repeat.",
+      "changedAfterward": "I started designing this site as a proof-of-learning archive.",
+      "impact": "The archive became part of the growth system.",
+      "chain": ["Conversation", "Asked what proof looks like", "Built documentation system", "Connected projects to learning", "Made growth visible"],
+      "tags": ["mentors", "documentation", "career-direction"]
+    },
+    {
+      "id": "uart-project",
+      "category": "Projects",
+      "date": "[2024.03.12]",
+      "title": "UART Transceiver in Verilog",
+      "description": "A project that forced serial communication, timing, sampling, and clock-domain assumptions into a single concrete design.",
+      "whyItChangedMe": "It made RTL feel like a disciplined way of thinking, not just another syntax to learn.",
+      "changedAfterward": "I became more interested in synchronization, verification, and timing-aware design.",
+      "impact": "It strengthened the chip-design direction.",
+      "chain": ["UART idea", "Verilog implementation", "CDC bug", "Synchronizer lesson", "RTL direction sharpened"],
+      "tags": ["project", "verilog", "rtl", "uart"]
+    },
+    {
+      "id": "choosing-ece",
+      "category": "Turning Points",
+      "date": "2023",
+      "title": "Choosing ECE",
+      "description": "ECE gave my hardware curiosity a formal direction through electronics, communication systems, signals, digital logic, and devices.",
+      "whyItChangedMe": "It gave me a field where the invisible layers of technology became worth studying seriously.",
+      "changedAfterward": "I began connecting subjects into systems instead of seeing them as separate coursework.",
+      "impact": "It is the academic root of the current RTL and chip-design direction.",
+      "chain": ["ECE", "Digital electronics", "FPGA curiosity", "Verilog", "VLSI and chip design"],
+      "tags": ["ece", "turning-point", "chip-design"]
+    }
+  ],
+  "replay": [
+    { "chapter": "Origins", "path": "/journey", "title": "A circuit turns curiosity into evidence.", "summary": "The beginning is not glamorous. It is the first time a simple system makes sense." },
+    { "chapter": "Direction", "path": "/knowledge-tree", "title": "Knowledge becomes a tree.", "summary": "Concepts stop floating and start depending on each other." },
+    { "chapter": "Failure", "path": "/failures", "title": "The board disagrees.", "summary": "A failed build becomes a more accurate model of reality." },
+    { "chapter": "System", "path": "/source-code-of-me", "title": "Personal growth becomes version history.", "summary": "The person building the projects is also being built." },
+    { "chapter": "Future", "path": "/dreams", "title": "The dream points toward silicon.", "summary": "The archive keeps moving because the engineer is still becoming." }
+  ],
+  "decisionTrees": [
+    {
+      "id": "uart-tech-choice",
+      "project": "UART Transceiver in Verilog",
+      "question": "Why Verilog for the UART project?",
+      "nodes": [
+        { "id": "start", "label": "Need to understand serial communication as hardware", "next": ["verilog", "software"] },
+        { "id": "verilog", "label": "Verilog exposes clocks, states, sampling, and synthesis", "next": ["final"] },
+        { "id": "software", "label": "Software UART would hide too much of the timing behavior", "next": ["lesson"] },
+        { "id": "final", "label": "Final decision: build synthesizable RTL and test on FPGA", "next": ["lesson"] },
+        { "id": "lesson", "label": "Lesson: the technology should expose the concept being learned", "next": [] }
+      ]
+    }
+  ],
+  "notebook": [
+    { "scope": "global", "title": "Engineering note", "note": "The site has a normal reading mode and a notebook layer for process, uncertainty, and behind-the-scenes thinking." },
+    { "scope": "/journey", "title": "Timeline annotation", "note": "Each milestone should preserve what changed in the mental model, not only what happened." },
+    { "scope": "/failures", "title": "Failure annotation", "note": "A good failure entry names the assumption that broke." },
+    { "scope": "/knowledge-tree", "title": "Knowledge annotation", "note": "Prerequisites are signal paths through learning." }
+  ],
+  "hariOS": [
+    ["Current Objective", "Build proof of engineering thinking"],
+    ["Running Processes", "rtl-learning, documentation, internship-prep"],
+    ["System Status", "early but active"],
+    ["Knowledge Base", "digital design, verilog, fpga, vlsi"],
+    ["Dream Engine", "chip design"],
+    ["Learning Engine", "build-break-debug-document"]
+  ],
+  "terminalCommands": {
+    "help": "Commands: whoami, dreams, failures, timeline, current-status, future",
+    "whoami": "hari sankar saravanan // ece student // rtl and chip-design direction // still becoming",
+    "dreams": "Open /dreams to see long-term ambitions and current progress.",
+    "failures": "Open /failures to read what broke and what it taught.",
+    "timeline": "Open /timeline for the existing git-log style archive.",
+    "current-status": "Current status: learning RTL, documenting projects, preparing for hardware internships.",
+    "future": "Future direction: build reliable digital systems and contribute to silicon."
+  }
+}

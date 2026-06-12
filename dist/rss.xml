@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rss version="2.0">
+  <channel>
+    <title>signal_source | ECE Engineering Journal</title>
+    <link>https://signalsource.dev/</link>
+    <description>Projects, failures, field notes, and learning logs from an ECE student becoming a hardware engineer.</description>
+    <language>en</language>
+    <item>
+      <title>UART Transceiver in Verilog</title>
+      <link>https://signalsource.dev/build-log/uart-transceiver-verilog</link>
+      <description>Implemented a full-duplex UART module with configurable baud rate.</description>
+      <pubDate>Tue, 12 Mar 2024 00:00:00 +0530</pubDate>
+    </item>
+    <item>
+      <title>Why I Spent a Week on a Problem I Could Have Googled</title>
+      <link>https://signalsource.dev/field-notes/week-on-problem</link>
+      <description>On the value of struggling with Verilog timing constraints before reading the solution.</description>
+      <pubDate>Sun, 10 Mar 2024 00:00:00 +0530</pubDate>
+    </item>
+    <item>
+      <title>The simulation passed. The board disagreed.</title>
+      <link>https://signalsource.dev/field-notes/simulation-passed-board-disagreed</link>
+      <description>A post-mortem on why the ALU worked in ModelSim and produced garbage on silicon.</description>
+      <pubDate>Wed, 28 Feb 2024 00:00:00 +0530</pubDate>
+    </item>
+  </channel>
+</rss>

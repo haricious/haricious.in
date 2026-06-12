@@ -1,0 +1,10 @@
+[
+  ["digital design notes", "Short explanations of gates, state machines, timing, clocking, and design patterns I want to remember."],
+  ["vlsi notes", "A growing set of semiconductor, layout, process, and chip-design concepts written in my own words."],
+  ["matlab experiments", "Small experiments where equations, signals, plots, and simulation results become easier to see."],
+  ["simulation studies", "Notes from trying tools, models, assumptions, and waveforms until the system becomes less mysterious."],
+  ["engineering concepts", "Concepts that connect across subjects: abstraction, feedback, constraints, reliability, tolerances, and systems thinking."],
+  ["debugging stories", "Failures preserved as case studies, because the bug usually teaches more than the first successful run."],
+  ["project journals", "Day-by-day build records for projects that are still becoming something."],
+  ["lessons learned", "Small conclusions collected from work, coursework, projects, and everything that did not go as planned."]
+]
