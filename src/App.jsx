@@ -25,6 +25,7 @@ import workTimelineData from "./content/work-timeline.json";
 import internshipsData from "./content/internships.json";
 import repositoriesData from "./content/repositories.json";
 import booksData from "./content/books.json";
+import siteSettings from "./content/site-settings.json";
 import learningLoopData from "./content/learning-loop.json";
 import notebookCategoriesData from "./content/notebook-categories.json";
 import currentlyData from "./content/currently.json";
@@ -89,8 +90,6 @@ const certificationArchive = certificationData;
 const workTimeline = workTimelineData;
 
 const engineeringInternships = internshipsData;
-const repositories = repositoriesData;
-const books = booksData;
 
 const learningLoop = learningLoopData;
 
@@ -155,6 +154,20 @@ const interviewKnowledgeRecords = allContent.map((item) => ({
 function App() {
   const location = useLocation();
   const [preloaderVisible, setPreloaderVisible] = useState(true);
+
+  useEffect(() => {
+    if (siteSettings?.seoDefaultTitle) document.title = siteSettings.seoDefaultTitle;
+    const desc = siteSettings?.seoDefaultDescription;
+    if (desc) {
+      let meta = document.querySelector('meta[name="description"]');
+      if (!meta) {
+        meta = document.createElement('meta');
+        meta.name = 'description';
+        document.head.appendChild(meta);
+      }
+      meta.content = desc;
+    }
+  }, []);
 
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "smooth" });
@@ -244,6 +257,7 @@ function Navbar() {
       </div>
       <nav className="desktop-links" aria-label="Primary">
         {navItems.map((item) => <NavLink key={item.path} to={item.path}>{item.label}</NavLink>)}
+        <a href="/admin/" className="admin-link">ADMIN</a>
       </nav>
       <button className="menu-button" type="button" aria-label="Toggle navigation" aria-expanded={open} onClick={() => setOpen((value) => !value)}>
         <span /><span /><span />

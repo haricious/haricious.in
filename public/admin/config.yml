@@ -1,7 +1,32 @@
 backend:
   name: github
-  repo: "<haricious>/<https://github.com/haricious/haricious.in>" # replace with your GitHub owner/repo
+  repo: "haricious/haricious.in"
   branch: main
+  auth:
+     client_id: "Ov23liPqcNfHWFPz1uzr"
+  auth_endpoint: "https://haricious-in.vercel.app/api/github-oauth"
+
+local_backend: true
+
+# GitHub OAuth notes:
+# To enable GitHub OAuth for the static admin you need a GitHub OAuth App.
+# 1. Create an OAuth App at https://github.com/settings/developers -> OAuth Apps
+#    - Application name: your site name (e.g. haricious.in Admin)
+#    - Homepage URL: https://<your-vercel-domain>/
+#    - Authorization callback URL: https://<your-vercel-domain>/admin/
+# 2. After creating the app, you'll get a Client ID and Client Secret.
+# 3. Do NOT commit the Client Secret to the repo. You have two integration options:
+#    A) Use the Client ID directly in `config.yml` (public) and set up an OAuth proxy
+#       on Vercel to exchange the code for a token using the Client Secret.
+#    B) Use a third-party OAuth proxy or Netlify Identity + Git Gateway (requires Netlify).
+#
+# Example (replace CLIENT_ID or implement proxy to keep secret server-side):
+# backend:
+#   name: github
+#   repo: "owner/repo"
+#   branch: main
+#   auth:
+#     client_id: "YOUR_GITHUB_OAUTH_CLIENT_ID"
 
 media_folder: "public/uploads"
 public_folder: "/uploads"
@@ -12,13 +37,15 @@ collections:
   - name: "field_notes"
     label: "Field Notes"
     folder: "src/content/field-notes"
+    slug: "{{slug}}"
+    path: "{{slug}}.json"
     create: true
     format: json
     extension: json
     fields:
       - { name: "title", label: "Title", widget: "string" }
-      - { name: "slug", label: "Slug", widget: "string" }
-      - { name: "date", label: "Date", widget: "string" }
+      - { name: "slug", label: "Slug", widget: "slug", required: true }
+      - { name: "date", label: "Date", widget: "date" }
       - { name: "type", label: "Type", widget: "string" }
       - { name: "summary", label: "Summary", widget: "text" }
       - { name: "tags", label: "Tags", widget: "list", field: { label: "Tag", name: "tag", widget: "string" } }
@@ -27,17 +54,31 @@ collections:
   - name: "projects"
     label: "Projects"
     folder: "src/content/projects"
+    slug: "{{slug}}"
+    path: "{{slug}}.json"
     create: true
     format: json
     extension: json
     fields:
       - { name: "title", label: "Title", widget: "string" }
       - { name: "slug", label: "Slug", widget: "string" }
-      - { name: "date", label: "Date", widget: "string" }
+      - { name: "date", label: "Date", widget: "date" }
       - { name: "domain", label: "Domain", widget: "string" }
       - { name: "outcome", label: "Outcome", widget: "text" }
       - { name: "lesson", label: "Lesson", widget: "text" }
       - { name: "tags", label: "Tags", widget: "list", field: { label: "Tag", name: "tag", widget: "string" } }
+      - { name: "relatedNotes", label: "Related Notes (slugs)", widget: "list", field: { label: "Note Slug", name: "slug", widget: "string" }, required: false }
+      - name: "details"
+        label: "Details"
+        widget: "object"
+        fields:
+          - { name: "what", label: "What", widget: "text" }
+          - { name: "why", label: "Why", widget: "text" }
+          - { name: "process", label: "Process", widget: "text" }
+          - { name: "broke", label: "Broke", widget: "text" }
+          - { name: "learned", label: "Learned", widget: "text" }
+          - { name: "different", label: "If Different", widget: "text", required: false }
+          - { name: "resources", label: "Resources", widget: "list", field: { label: "Resource", name: "resource", widget: "string" }, required: false }
 
   - name: "about_sections"
     label: "About Sections"
@@ -73,6 +114,8 @@ collections:
   - name: "books"
     label: "Books"
     folder: "src/content/books"
+    slug: "{{slug}}"
+    path: "{{slug}}.json"
     create: true
     format: json
     extension: json
@@ -84,7 +127,7 @@ collections:
       - { name: "status", label: "Status", widget: "string" }
       - { name: "dateFinished", label: "Date Finished", widget: "string" }
       - { name: "rating", label: "Rating", widget: "number" }
-      - { name: "cover", label: "Cover", widget: "string" }
+      - { name: "cover", label: "Cover", widget: "image", required: false }
       - { name: "summary", label: "Summary", widget: "text" }
       - { name: "tags", label: "Tags", widget: "list", field: { label: "Tag", name: "tag", widget: "string" } }
       - { name: "details", label: "Details", widget: "object", fields: [ { name: "whyRead", label: "Why Read", widget: "text" }, { name: "expectation", label: "Expectation", widget: "text" }, { name: "whatFound", label: "What Found", widget: "text" }, { name: "favoriteIdeas", label: "Favorite Ideas", widget: "list", field: { label: "Idea", name: "idea", widget: "string" } }, { name: "keyTakeaways", label: "Key Takeaways", widget: "list", field: { label: "Takeaway", name: "takeaway", widget: "string" } } ] }
@@ -92,6 +135,8 @@ collections:
   - name: "repositories"
     label: "Repositories"
     folder: "src/content/repositories"
+    slug: "{{slug}}"
+    path: "{{slug}}.json"
     create: true
     format: json
     extension: json
@@ -103,6 +148,7 @@ collections:
       - { name: "language", label: "Language", widget: "string" }
       - { name: "stars", label: "Stars", widget: "number" }
       - { name: "tags", label: "Tags", widget: "list", field: { label: "Tag", name: "tag", widget: "string" } }
+      - { name: "topics", label: "Topics", widget: "list", field: { label: "Topic", name: "topic", widget: "string" }, required: false }
 
   - name: "site_settings"
     label: "Site Settings"

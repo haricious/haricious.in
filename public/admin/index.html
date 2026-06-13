@@ -6,11 +6,24 @@
     <title>Admin</title>
   </head>
   <body>
-    <script src="https://unpkg.com/netlify-cms@^2.15.0/dist/netlify-cms.js"></script>
     <script>
-      // Initialize Netlify/Decap CMS with the config in this folder
+      // Load Netlify/Decap CMS and initialize once available.
       window.CMS_MANUAL_INIT = true;
-      CMS.init({ config: '/admin/config.yml' });
+      (function loadCMS(){
+        if (window.CMS) {
+          CMS.init({ config: '/admin/config.yml' });
+          return;
+        }
+        var s = document.createElement('script');
+        s.src = 'https://unpkg.com/netlify-cms@^2.15.0/dist/netlify-cms.js';
+        s.onload = function(){
+          if (window.CMS) CMS.init({ config: '/admin/config.yml' });
+        };
+        s.onerror = function(){
+          console.error('Failed to load Netlify CMS script from CDN.');
+        };
+        document.body.appendChild(s);
+      })();
     </script>
   </body>
 </html>
