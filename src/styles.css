@@ -407,10 +407,13 @@ time,
 /* Ensure overlay is full viewport and on top */
 .mobile-overlay {
   position: fixed;
-  inset: 0 auto 0 0;
-  right: 0;
   top: 0;
+  right: 0;
   bottom: 0;
+  left: auto;
+  width: 84vw;
+  max-width: 420px;
+  z-index: 120;
 }
 
 .mobile-search { padding: 8px 4px; }
