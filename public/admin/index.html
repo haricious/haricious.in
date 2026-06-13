@@ -15,12 +15,18 @@
           return;
         }
         var s = document.createElement('script');
-        s.src = 'https://unpkg.com/netlify-cms@^2.15.0/dist/netlify-cms.js';
+        // Use a stable CDN URL (avoid semver caret in the URL which may be blocked).
+        s.src = 'https://unpkg.com/netlify-cms@latest/dist/netlify-cms.js';
         s.onload = function(){
           if (window.CMS) CMS.init({ config: '/admin/config.yml' });
         };
         s.onerror = function(){
           console.error('Failed to load Netlify CMS script from CDN.');
+          var el = document.createElement('div');
+          el.style.padding = '24px';
+          el.style.fontFamily = 'system-ui,Segoe UI,Roboto,Helvetica,Arial';
+          el.innerHTML = '<strong>Admin failed to load.</strong> Check network or CDN availability.';
+          document.body.appendChild(el);
         };
         document.body.appendChild(s);
       })();
