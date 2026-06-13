@@ -255,9 +255,8 @@ function Navbar() {
         <button type="button" aria-label="Go back" onClick={() => navigate(-1)}>&lt;</button>
         <button type="button" aria-label="Go forward" onClick={() => navigate(1)}>&gt;</button>
       </div>
-      <nav className="desktop-links" aria-label="Primary">
+        <nav className="desktop-links" aria-label="Primary">
         {navItems.map((item) => <NavLink key={item.path} to={item.path}>{item.label}</NavLink>)}
-        <a href="/admin/" className="admin-link">ADMIN</a>
       </nav>
       <button className="menu-button" type="button" aria-label="Toggle navigation" aria-expanded={open} onClick={() => setOpen((value) => !value)}>
         <span /><span /><span />
