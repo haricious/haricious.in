@@ -1,5 +1,5 @@
 import Fuse from "fuse.js";
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import {
   Link,
   NavLink,
@@ -224,6 +224,9 @@ function Navbar() {
   const [open, setOpen] = useState(false);
   const navigate = useNavigate();
   const location = useLocation();
+  const menuButtonRef = useRef(null);
+  const mobileNavRef = useRef(null);
+  const previouslyFocusedRef = useRef(null);
   const close = () => setOpen(false);
 
   useEffect(() => {
@@ -244,6 +247,42 @@ function Navbar() {
     return () => window.removeEventListener("keydown", closeOnEscape);
   }, [open]);
 
+  // focus management & focus trap for mobile panel
+  useEffect(() => {
+    const site = document.querySelector('.site-experience');
+    const mobile = mobileNavRef.current;
+    if (open) {
+      previouslyFocusedRef.current = document.activeElement;
+      site?.setAttribute('aria-hidden', 'true');
+      // focus first focusable element inside mobile panel
+      requestAnimationFrame(() => {
+        const focusable = mobile?.querySelectorAll('a, button, input, [tabindex]:not([tabindex="-1"])');
+        (focusable && focusable[0])?.focus();
+      });
+
+      const handleTrap = (e) => {
+        if (e.key !== 'Tab') return;
+        const focusable = Array.from(mobile.querySelectorAll('a, button, input, [tabindex]:not([tabindex="-1"])'));
+        if (!focusable.length) return;
+        const first = focusable[0];
+        const last = focusable[focusable.length - 1];
+        if (e.shiftKey && document.activeElement === first) {
+          e.preventDefault();
+          last.focus();
+        } else if (!e.shiftKey && document.activeElement === last) {
+          e.preventDefault();
+          first.focus();
+        }
+      };
+      mobile?.addEventListener('keydown', handleTrap);
+      return () => mobile?.removeEventListener('keydown', handleTrap);
+    }
+    // on close, restore focus
+    site?.removeAttribute('aria-hidden');
+    previouslyFocusedRef.current?.focus?.();
+    return undefined;
+  }, [open]);
+
   return (
     <header className="site-nav">
       <Link className="logo" to="/" onClick={close}>&gt; haricious.in</Link>
@@ -261,6 +300,7 @@ function Navbar() {
 
       {/* Mobile menu button */}
       <button
+        ref={menuButtonRef}
         className="menu-button"
         type="button"
         aria-label={open ? "Close navigation" : "Open navigation"}
@@ -277,7 +317,7 @@ function Navbar() {
 
       {/* Slide-in mobile panel (moved outside header to avoid clipping) */}
       <div className={`mobile-backdrop ${open ? 'is-open' : ''}`} onClick={close} aria-hidden={!open} />
-      <aside id="mobile-nav" className={`mobile-overlay ${open ? 'is-open' : ''}`} aria-hidden={!open}>
+      <aside ref={mobileNavRef} id="mobile-nav" className={`mobile-overlay ${open ? 'is-open' : ''}`} aria-hidden={!open}>
         <div className="mobile-header">
           <strong className="logo">&gt; haricious.in</strong>
           <button className="close-btn" aria-label="Close menu" onClick={close}>✕</button>
