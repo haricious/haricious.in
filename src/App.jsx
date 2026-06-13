@@ -273,7 +273,9 @@ function Navbar() {
         <span />
       </button>
 
-      {/* Slide-in mobile panel */}
+      </header>
+
+      {/* Slide-in mobile panel (moved outside header to avoid clipping) */}
       <div className={`mobile-backdrop ${open ? 'is-open' : ''}`} onClick={close} aria-hidden={!open} />
       <aside id="mobile-nav" className={`mobile-overlay ${open ? 'is-open' : ''}`} aria-hidden={!open}>
         <div className="mobile-header">
@@ -294,7 +296,6 @@ function Navbar() {
           ))}
         </nav>
       </aside>
-    </header>
   );
 }
 
