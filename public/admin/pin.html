@@ -25,20 +25,53 @@
     </div>
 
     <script>
-      document.getElementById('submit').addEventListener('click', async () => {
-        const pin = document.getElementById('pin').value.trim();
-        document.getElementById('msg').textContent = '';
+      const pinInput = document.getElementById('pin');
+      const submitBtn = document.getElementById('submit');
+      const msgEl = document.getElementById('msg');
+
+      function disableUi(seconds) {
+        submitBtn.disabled = true;
+        pinInput.disabled = true;
+        msgEl.textContent = `Too many attempts. Try again in ${seconds} seconds.`;
+        let remaining = seconds;
+        const t = setInterval(() => {
+          remaining -= 1;
+          if (remaining <= 0) {
+            clearInterval(t);
+            submitBtn.disabled = false;
+            pinInput.disabled = false;
+            msgEl.textContent = '';
+          } else {
+            msgEl.textContent = `Too many attempts. Try again in ${remaining} seconds.`;
+          }
+        }, 1000);
+      }
+
+      submitBtn.addEventListener('click', async () => {
+        const pin = pinInput.value.trim();
+        msgEl.textContent = '';
         try {
           const resp = await fetch('/api/pin-auth', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ pin }) });
           const data = await resp.json();
-          if (data.ok) {
+          if (resp.status === 200 && data.ok) {
             sessionStorage.setItem('admin_authed', '1');
             location.href = '/admin/index.html';
+            return;
+          }
+          // handle rate limit
+          if (resp.status === 429 || data.remaining === 0) {
+            const retry = data.retryAfter || parseInt(resp.headers.get('Retry-After')) || 600;
+            disableUi(retry);
+            return;
+          }
+          // show error and attempts left if provided
+          if (data && data.remaining !== undefined) {
+            msgEl.textContent = `${data.error || 'Invalid PIN'}. Attempts left: ${data.remaining}`;
           } else {
-            document.getElementById('msg').textContent = data.error || 'Invalid PIN';
+            msgEl.textContent = data.error || 'Invalid PIN';
           }
         } catch (err) {
-          document.getElementById('msg').textContent = 'Auth failed';
+          msgEl.textContent = 'Auth failed';
         }
       });
     </script>
