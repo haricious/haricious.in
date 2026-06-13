@@ -1,0 +1,16 @@
+{
+  "slug": "cloud-computing-session-2025",
+  "type": "FIELD NOTE",
+  "title": "What a senior DevOps engineer at AmEx taught me in one session",
+  "date": "[2025.01]",
+  "tags": [
+    "cloud-computing",
+    "devops",
+    "industry-perspective"
+  ],
+  "body": [
+    "Mr. Jithin Kannan talked about cloud the way people talk about infrastructure when they've had to keep it alive at scale. Not the abstraction. The plumbing underneath it.",
+    "The thing that landed hardest: cloud isn't a destination you migrate to once and then forget. It's a set of decisions you're making continuously — about cost, latency, redundancy, who owns which failure.",
+    "As an ECE student thinking about hardware and embedded systems, cloud feels like the far end of the stack. But what this session made clear is that the boundary between silicon and services is getting thinner. The question isn't whether these worlds will intersect. It's how soon you want to be fluent in both."
+  ]
+}

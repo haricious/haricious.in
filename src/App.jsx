@@ -49,9 +49,27 @@ import "./features/becoming/styles.css";
 const navItems = navigation.navItems;
 const floatingArchiveLinks = navigation.floatingArchiveLinks;
 
-const projects = projectsData;
+const projectsStatic = projectsData;
+const fieldNotesStatic = fieldNotesData;
 
-const fieldNotes = fieldNotesData;
+// Prefer per-file JSON collections when available; otherwise fall back to single-file data
+const _fieldNoteModules = import.meta.glob('./content/field-notes/*.json', { eager: true });
+const _fieldNoteEntries = Object.values(_fieldNoteModules).map((m) => m.default ?? m);
+const fieldNotes = _fieldNoteEntries.length ? _fieldNoteEntries : fieldNotesStatic;
+
+const _projectModules = import.meta.glob('./content/projects/*.json', { eager: true });
+const _projectEntries = Object.values(_projectModules).map((m) => m.default ?? m);
+const projects = _projectEntries.length ? _projectEntries : projectsStatic;
+
+const booksStatic = booksData;
+const _bookModules = import.meta.glob('./content/books/*.json', { eager: true });
+const _bookEntries = Object.values(_bookModules).map((m) => m.default ?? m);
+const books = _bookEntries.length ? _bookEntries : booksStatic;
+
+const repositoriesStatic = repositoriesData;
+const _repoModules = import.meta.glob('./content/repositories/*.json', { eager: true });
+const _repoEntries = Object.values(_repoModules).map((m) => m.default ?? m);
+const repositories = _repoEntries.length ? _repoEntries : repositoriesStatic;
 
 const domains = domainsData;
 

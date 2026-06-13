@@ -1,0 +1,45 @@
+{
+  "slug": "the-cuckoos-egg",
+  "title": "The Cuckoo's Egg",
+  "author": "Cliff Stoll",
+  "category": "Systems",
+  "status": "COMPLETED",
+  "dateFinished": "[2025.03.20]",
+  "rating": 4,
+  "cover": "/assets/books/the-cuckoos-egg/cover.jpg",
+  "summary": "A real-world story of tracking an intruder through network logs, debugging system behavior, and learning how complex systems fail.",
+  "verdict": "This book showed me that engineering is as much about curiosity and persistence as it is about technical skill.",
+  "tags": [
+    "systems",
+    "security",
+    "debugging",
+    "networking",
+    "investigation"
+  ],
+  "details": {
+    "whyRead": "I wanted to understand how real systems are investigated when something breaks in the wild.",
+    "expectation": "I expected an obscure history of early computing security incidents.",
+    "whatFound": "Instead, I found a gripping narrative that connected system monitoring, human behavior, and the need to trace symptoms back to causes.",
+    "favoriteIdeas": [
+      "Audit Trails",
+      "Intrusion Detection",
+      "Systems Thinking",
+      "Persistence in Debugging"
+    ],
+    "keyTakeaways": [
+      "Good debugging is often slow, methodical, and based on evidence.",
+      "Complex systems hide their failures in small, subtle anomalies.",
+      "Investigation skills are as important as coding skills in system engineering."
+    ],
+    "whatChanged": "It made me care more about observability, log analysis, and the process of following a failure from symptom to root cause.",
+    "appliedIn": [
+      "System Monitoring",
+      "Debug Logs",
+      "Failure Notes",
+      "Project Instrumentation"
+    ],
+    "favoriteQuote": "The only thing more expensive than education is ignorance.",
+    "wouldRecommend": true,
+    "recommendation": "Recommended for engineers and students who want a practical view of how systems are defended and diagnosed."
+  }
+}

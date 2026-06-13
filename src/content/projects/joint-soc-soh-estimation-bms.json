@@ -1,0 +1,47 @@
+{
+  "slug": "joint-soc-soh-estimation-bms",
+  "title": "Joint State-of-Charge and State-of-Health Estimation for Battery Management Systems",
+  "domain": "MATLAB/SIMULINK",
+  "status": "COMPLETED",
+  "date": "[2026.01.19]",
+  "outcome": "Developed a combined SoC and SoH estimation system for a 12V, 7Ah lead-acid battery using MATLAB, Simulink, and an Extended Kalman Filter to improve estimation accuracy and compensate for modelling uncertainties.",
+  "lesson": "Accurate battery estimation depends as much on modelling assumptions and parameter tuning as it does on the estimation algorithm itself. The Extended Kalman Filter significantly reduced drift and improved robustness compared to standalone estimation methods.",
+  "tags": [
+    "battery-management-system",
+    "matlab",
+    "simulink",
+    "extended-kalman-filter",
+    "EKF",
+    "soc-estimation",
+    "soh-estimation",
+    "simscape",
+    "control-systems",
+    "energy-systems",
+    "BMS"
+  ],
+  "relatedNotes": [
+    "bms-internship-start-jan-2026",
+    "battery-fundamentals-module-1",
+    "lead-acid-pivot",
+    "bms-simulation-matlab",
+    "thevenin-model-iv-test",
+    "soc-soh-ekf-publication"
+  ],
+  "details": {
+    "what": "A Battery Management System simulation that jointly estimates State-of-Charge (SoC) and State-of-Health (SoH) for a lead-acid battery. The project integrates battery pack modelling, equivalent circuit modelling, OCV-SoC characterization, Coulomb counting, temperature compensation, and Extended Kalman Filter-based estimation into a single Simulink framework.",
+    "why": "Battery performance degrades over time and accurate monitoring is critical for reliability, safety, and efficiency. I wanted to understand how estimation algorithms combine physical battery models with real-time measurements to predict battery condition more accurately.",
+    "process": "I began by modelling a 12V, 7Ah lead-acid battery pack in Simulink and Simscape Electrical. I implemented a first-order RC equivalent circuit model, generated OCV-SoC characterization data, and developed Coulomb-counting based charge estimation. After building the battery model, I integrated an Extended Kalman Filter for state estimation, added temperature compensation logic, and implemented SoH tracking through capacity fade and resistance growth monitoring. Finally, I validated the complete system through simulation and dashboard-based analysis.",
+    "broke": "The most challenging part was tuning the estimation parameters and ensuring stable convergence between the battery model and EKF predictions. Small modelling inaccuracies or poorly tuned covariance values could cause estimation drift, making the predicted battery state diverge from expected behavior.",
+    "learned": "Battery modelling requires balancing physical accuracy with computational simplicity. State estimation is not just about implementing an algorithm—it depends heavily on model quality, parameter selection, measurement noise assumptions, and system dynamics. I also gained practical exposure to Simscape Electrical, battery equivalent circuit modelling, Kalman filtering, and battery health tracking concepts.",
+    "different": "If I revisit this project, I would extend the work to lithium-ion battery models, include experimental hardware validation instead of simulation-only verification, and compare EKF performance against alternative estimation techniques such as Unscented Kalman Filters and Particle Filters.",
+    "resources": [
+      "MATLAB R2025b",
+      "Simulink",
+      "Simscape Electrical",
+      "Extended Kalman Filter",
+      "Battery Equivalent Circuit Models",
+      "OCV-SoC Characterization",
+      "Battery Management System Fundamentals"
+    ]
+  }
+}

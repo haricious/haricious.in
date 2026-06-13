@@ -1,0 +1,118 @@
+backend:
+  name: github
+  repo: "<haricious>/<https://github.com/haricious/haricious.in>" # replace with your GitHub owner/repo
+  branch: main
+
+media_folder: "public/uploads"
+public_folder: "/uploads"
+
+publish_mode: editorial_workflow
+
+collections:
+  - name: "field_notes"
+    label: "Field Notes"
+    folder: "src/content/field-notes"
+    create: true
+    format: json
+    extension: json
+    fields:
+      - { name: "title", label: "Title", widget: "string" }
+      - { name: "slug", label: "Slug", widget: "string" }
+      - { name: "date", label: "Date", widget: "string" }
+      - { name: "type", label: "Type", widget: "string" }
+      - { name: "summary", label: "Summary", widget: "text" }
+      - { name: "tags", label: "Tags", widget: "list", field: { label: "Tag", name: "tag", widget: "string" } }
+      - { name: "body", label: "Body (paragraphs)", widget: "list", field: { label: "Paragraph", name: "paragraph", widget: "text" } }
+
+  - name: "projects"
+    label: "Projects"
+    folder: "src/content/projects"
+    create: true
+    format: json
+    extension: json
+    fields:
+      - { name: "title", label: "Title", widget: "string" }
+      - { name: "slug", label: "Slug", widget: "string" }
+      - { name: "date", label: "Date", widget: "string" }
+      - { name: "domain", label: "Domain", widget: "string" }
+      - { name: "outcome", label: "Outcome", widget: "text" }
+      - { name: "lesson", label: "Lesson", widget: "text" }
+      - { name: "tags", label: "Tags", widget: "list", field: { label: "Tag", name: "tag", widget: "string" } }
+
+  - name: "about_sections"
+    label: "About Sections"
+    files:
+      - file: "src/content/about-sections.json"
+        label: "About Sections"
+        name: "about_sections"
+        format: json
+        fields:
+          - { name: "sections", label: "Sections", widget: "list", field: { label: "Section", name: "section", widget: "object", fields: [ { name: "label", label: "Label", widget: "string" }, { name: "copy", label: "Copy", widget: "text" } ] } }
+
+  - name: "personal_info"
+    label: "Personal Info"
+    files:
+      - file: "src/content/personal-info.json"
+        label: "Personal Contact"
+        name: "personal_info"
+        format: json
+        fields:
+          - { name: "items", label: "Items", widget: "list", field: { label: "Pair", name: "pair", widget: "object", fields: [ { name: "label", label: "Label", widget: "string" }, { name: "value", label: "Value", widget: "string" } ] } }
+
+  - name: "navigation"
+    label: "Navigation"
+    files:
+      - file: "src/content/navigation.json"
+        label: "Navigation"
+        name: "navigation"
+        format: json
+        fields:
+          - { name: "navItems", label: "Nav Items", widget: "list", field: { label: "Item", name: "item", widget: "object", fields: [ { name: "label", label: "Label", widget: "string" }, { name: "path", label: "Path", widget: "string" } ] } }
+          - { name: "floatingArchiveLinks", label: "Floating Archive Links", widget: "list", field: { label: "Link", name: "link", widget: "object", fields: [ { name: "title", label: "Title", widget: "string" }, { name: "count", label: "Count", widget: "string", required: false }, { name: "copy", label: "Copy", widget: "text" }, { name: "path", label: "Path", widget: "string" } ] } }
+
+  - name: "books"
+    label: "Books"
+    folder: "src/content/books"
+    create: true
+    format: json
+    extension: json
+    fields:
+      - { name: "title", label: "Title", widget: "string" }
+      - { name: "slug", label: "Slug", widget: "string" }
+      - { name: "author", label: "Author", widget: "string" }
+      - { name: "category", label: "Category", widget: "string" }
+      - { name: "status", label: "Status", widget: "string" }
+      - { name: "dateFinished", label: "Date Finished", widget: "string" }
+      - { name: "rating", label: "Rating", widget: "number" }
+      - { name: "cover", label: "Cover", widget: "string" }
+      - { name: "summary", label: "Summary", widget: "text" }
+      - { name: "tags", label: "Tags", widget: "list", field: { label: "Tag", name: "tag", widget: "string" } }
+      - { name: "details", label: "Details", widget: "object", fields: [ { name: "whyRead", label: "Why Read", widget: "text" }, { name: "expectation", label: "Expectation", widget: "text" }, { name: "whatFound", label: "What Found", widget: "text" }, { name: "favoriteIdeas", label: "Favorite Ideas", widget: "list", field: { label: "Idea", name: "idea", widget: "string" } }, { name: "keyTakeaways", label: "Key Takeaways", widget: "list", field: { label: "Takeaway", name: "takeaway", widget: "string" } } ] }
+
+  - name: "repositories"
+    label: "Repositories"
+    folder: "src/content/repositories"
+    create: true
+    format: json
+    extension: json
+    fields:
+      - { name: "title", label: "Title", widget: "string" }
+      - { name: "slug", label: "Slug", widget: "string" }
+      - { name: "url", label: "URL", widget: "string" }
+      - { name: "description", label: "Description", widget: "text" }
+      - { name: "language", label: "Language", widget: "string" }
+      - { name: "stars", label: "Stars", widget: "number" }
+      - { name: "tags", label: "Tags", widget: "list", field: { label: "Tag", name: "tag", widget: "string" } }
+
+  - name: "site_settings"
+    label: "Site Settings"
+    files:
+      - file: "src/content/site-settings.json"
+        label: "Site Settings"
+        name: "site_settings"
+        format: json
+        fields:
+          - { name: "siteTitle", label: "Site Title", widget: "string" }
+          - { name: "resumeLink", label: "Resume Link", widget: "string" }
+          - { name: "seoDefaultTitle", label: "SEO Default Title", widget: "string" }
+          - { name: "seoDefaultDescription", label: "SEO Default Description", widget: "text" }

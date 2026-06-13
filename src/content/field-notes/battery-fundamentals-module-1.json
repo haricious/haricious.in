@@ -1,0 +1,25 @@
+{
+  "slug": "battery-fundamentals-module-1",
+  "type": "FIELD NOTE",
+  "title": "Battery University and the history I didn't know I needed",
+  "date": "[2026.01]",
+  "tags": [
+    "batteries",
+    "BMS",
+    "OCV",
+    "thevenin",
+    "lithium-ion"
+  ],
+  "series": {
+    "name": "BMS Estimation — Gandhigram",
+    "part": 2,
+    "total": 5
+  },
+  "body": [
+    "The first module wasn't Simulink or Kalman filters. It was history. How batteries evolved. Why lithium-ion became the default. What the tradeoffs actually were.",
+    "That turned out to be the right place to start.",
+    "OCV, internal resistance, Thevenin equivalent circuits — these concepts look dry in a textbook. But once you understand the electrochemistry they're approximating, they stop being abstract. They're simplifications you're choosing to make, with known costs and known limits.",
+    "Battery University does this well. It doesn't let you treat a cell as a black box. It makes you understand what's actually happening inside before it lets you model it.",
+    "One module down. The fundamentals are starting to connect into something coherent instead of sitting in separate mental compartments."
+  ]
+}

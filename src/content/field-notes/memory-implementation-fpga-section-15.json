@@ -1,0 +1,33 @@
+{
+  "slug": "memory-implementation-fpga-section-15",
+  "type": "FIELD NOTE",
+  "title": "Section 15 done: three ways to describe memory, one wrong turn on an assignment, and what both taught",
+  "date": "[2026.06.13]",
+  "tags": [
+    "verilog",
+    "FPGA",
+    "BRAM",
+    "distributed-RAM",
+    "ROM",
+    "single-port-RAM",
+    "IP-core",
+    "memory",
+    "RTL",
+    "COE-file",
+    "MATLAB"
+  ],
+  "series": {
+    "name": "RTL Build Log",
+    "part": 10
+  },
+  "body": [
+    "Memory is where RTL stops being combinational and starts carrying state. That sounds obvious. It lands differently once you are actually staring at a write-enable signal and asking what the design is doing with it when the clock edge arrives.",
+    "The two physical resources on an FPGA for this are block RAM and distributed RAM. Both can implement ROM structures. The distinction matters for synthesis — block RAM is a dedicated embedded resource, distributed RAM repurposes LUT fabric. Choosing between them is partly about size, partly about timing, partly about what the synthesizer decides to do with your code. The general RTL method leaves that decision largely to the toolchain. Language templates nudge it toward a specific target. IP blocks make it explicit.",
+    "The section covered all three approaches in sequence: general RTL coding, vendor-supplied language templates, and IP-based block design. Each one is a different point on the abstraction curve. General RTL gives you the most control and the most responsibility. Language templates trade some control for predictability. IP blocks give you configurability without requiring you to describe the underlying structure at all.",
+    "The order mattered. Building the single-port RAM from scratch — writing the memory array, the address logic, the read path, the write path — meant that when the language template appeared, it read as a recognisable structure rather than a new artefact. And when the IP block appeared, the configuration options had names I already understood. The higher-level tool is less useful if you have never had to think about what it is doing below the surface.",
+    "The section closed with a single-port ROM loaded with sine wave data generated in MATLAB, converted to a COE file, and verified in simulation. The waveform matched the expected sine profile. That kind of end-to-end path — generate data, describe the storage structure, verify the output — is a useful pattern to have run at least once.",
+    "Assignment 21 was the more instructive session. The task was a half-wave rectifier using a single-port ROM. I read it as a RAM problem, built the design around RAM, and ran verification. The waveform was not matching. The mismatch was not a logic error — the design was correct for what I had built. The problem was that I had built the wrong thing.",
+    "That distinction is worth keeping. There is a difference between a design that fails because the logic is wrong and a design that fails because the specification was misread. The first is a debugging problem. The second is a reading problem. Both cost time. Only one teaches you something about the logic itself.",
+    "Kept both versions. The ROM-based implementation satisfies the assignment. The RAM version is logged separately. Section 15 is done. Three assignments remain before moving forward."
+  ]
+}

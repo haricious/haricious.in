@@ -1,0 +1,24 @@
+{
+  "slug": "barrel-shifter-block-design",
+  "type": "FIELD NOTE",
+  "title": "Assignment 19: a barrel shifter that looked simple until the connections started multiplying",
+  "date": "[2026.06.12]",
+  "tags": [
+    "vivado",
+    "barrel-shifter",
+    "block-design",
+    "verification",
+    "waveform"
+  ],
+  "series": {
+    "name": "RTL Build Log",
+    "part": 8
+  },
+  "body": [
+    "The barrel shifter looked approachable. Then the connections multiplied.",
+    "A barrel shifter shifts N bits by a selectable amount in a single clock cycle — no iterative shifting, all paths computed in parallel. The logic is a set of mux stages, one per bit position, each selecting between the shifted and unshifted path based on the shift amount bits.",
+    "Building it in block design meant wiring those mux stages by hand. Each connection is an individual decision. Each incorrect connection propagates an incorrect signal that might not manifest until you check the output for a specific shift amount.",
+    "A few wrong turns. A lot of staring at the schematic. Eventually the waveform lined up exactly.",
+    "The observation that keeps surfacing: debugging logic visually is different from debugging RTL, but the underlying process is the same. You have a model of what the circuit should do. You have evidence of what it actually did. The gap between them is the problem."
+  ]
+}

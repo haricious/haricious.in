@@ -1,0 +1,45 @@
+{
+  "slug": "digital-design-and-computer-architecture",
+  "title": "Digital Design and Computer Architecture",
+  "author": "David Harris, Sarah Harris",
+  "category": "Engineering",
+  "status": "COMPLETED",
+  "dateFinished": "[2025.06.15]",
+  "rating": 5,
+  "cover": "/assets/books/digital-design-and-computer-architecture/cover.jpg",
+  "summary": "A foundational book that connects logic design, computer architecture, Verilog, state machines, and processor design into a coherent engineering framework.",
+  "verdict": "This book transformed digital design from a collection of topics into a system of interconnected ideas.",
+  "tags": [
+    "digital-design",
+    "computer-architecture",
+    "verilog",
+    "rtl",
+    "engineering"
+  ],
+  "details": {
+    "whyRead": "I wanted to build stronger foundations in digital design and understand how hardware systems are constructed from logic gates up to processors.",
+    "expectation": "I expected a textbook focused mainly on theory and exam preparation.",
+    "whatFound": "Instead, I found a structured explanation of how digital systems evolve from simple logic into complete computing architectures.",
+    "favoriteIdeas": [
+      "Finite State Machines",
+      "Datapath and Control Separation",
+      "Processor Architecture",
+      "Hardware Description Languages"
+    ],
+    "keyTakeaways": [
+      "Digital systems are built from layers of abstraction.",
+      "Architecture matters as much as implementation.",
+      "Timing is a design requirement, not an afterthought."
+    ],
+    "whatChanged": "After reading this book, I became significantly more interested in RTL design, FPGA development, and processor architecture.",
+    "appliedIn": [
+      "Verilog Projects",
+      "FSM Design",
+      "FPGA Experiments",
+      "Portfolio Knowledge Tree"
+    ],
+    "favoriteQuote": "The important thing is the system and not the sum of its parts.",
+    "wouldRecommend": true,
+    "recommendation": "Highly recommended for students interested in digital design, FPGA development, computer architecture, or RTL engineering."
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "slug": "hdlbits-day-one",
+  "type": "FIELD NOTE",
+  "title": "HDLBits: the LeetCode for hardware — except the bugs don't just fail tests, they become circuits",
+  "date": "[2026.06.06]",
+  "tags": [
+    "verilog",
+    "RTL",
+    "HDLBits",
+    "digital-design",
+    "dataflow-modelling"
+  ],
+  "series": {
+    "name": "RTL Build Log",
+    "part": 1
+  },
+  "body": [
+    "The analogy holds better than I expected. HDLBits is structured problem-solving with immediate feedback, exactly like algorithmic practice platforms. The difference is what you're building.",
+    "Software bugs fail tests. Hardware bugs become circuits. A wrong always block doesn't throw an exception — it synthesizes into logic that quietly does the wrong thing, and you might not find out until a waveform tells you three hours later.",
+    "Day one was wires, nets, and vectors. The interesting part wasn't getting the problems accepted. It was tracing signal propagation: following a value through the logic and asking why a particular output exists at a particular time.",
+    "I spent more time reading the circuit than writing code. That felt like the right instinct.",
+    "Dataflow modelling for now. The plan maps out from here."
+  ]
+}

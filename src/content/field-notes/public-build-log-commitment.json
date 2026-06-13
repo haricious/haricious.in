@@ -1,0 +1,23 @@
+{
+  "slug": "public-build-log-commitment",
+  "type": "META NOTE",
+  "title": "Why I'm logging this publicly — and the one rule that makes it honest",
+  "date": "[2026.06.06]",
+  "tags": [
+    "build-log",
+    "learning-process",
+    "RTL",
+    "discipline"
+  ],
+  "series": {
+    "name": "RTL Build Log",
+    "part": 0
+  },
+  "body": [
+    "Not for accountability. Not for motivation. For traceability.",
+    "I wanted a record of what got built, when, and why. The commit history becomes the log. The log becomes the evidence.",
+    "One rule: no AI-written code. Every line gets typed. If I don't understand it, I learn it first. AI stays on the whiteboard — for reasoning, for explanation, for design review. Not in the source files.",
+    "This isn't a performance of discipline. It's a structural decision about what kind of engineer I'm trying to become. Faster output is not the goal. Owning the stack is.",
+    "One module at a time."
+  ]
+}

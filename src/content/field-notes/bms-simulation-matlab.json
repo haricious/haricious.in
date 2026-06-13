@@ -1,0 +1,25 @@
+{
+  "slug": "bms-simulation-matlab",
+  "type": "FIELD NOTE",
+  "title": "Building a BMS from scratch in Simulink: where control logic meets physics",
+  "date": "[2026.01]",
+  "tags": [
+    "matlab",
+    "simulink",
+    "simscape",
+    "coulomb-counting",
+    "CC-CV"
+  ],
+  "series": {
+    "name": "BMS Estimation — Gandhigram",
+    "part": 4,
+    "total": 5
+  },
+  "body": [
+    "There's a moment in Simulink where a model starts to look like a system instead of a diagram. The control logic is there. The thermal model is there. The physics is there. And they're all talking to each other through signal lines that carry real units.",
+    "That moment took most of the day to reach.",
+    "Simscape's battery pack models are useful for getting a thermal-aware baseline quickly. Coulomb counting for SOC estimation is simple and revealing — simple because the math is integration, revealing because you can immediately see how error accumulates over time without a correction mechanism.",
+    "CC–CV charging is one of those algorithms that looks obvious once you understand it and non-obvious until you do. Constant current until voltage limit, then hold voltage and watch current taper. The control logic is clean. The interesting part is knowing when to transition and how to handle edge cases at temperature extremes.",
+    "By the end of the session, the simulation was running safe charge-discharge cycles. Not production-grade. But structurally honest."
+  ]
+}

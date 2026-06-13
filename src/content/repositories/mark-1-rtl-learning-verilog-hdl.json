@@ -1,0 +1,30 @@
+{
+  "slug": "mark-1-rtl-learning-verilog-hdl",
+  "title": "Verilog HDL",
+  "description": "A repository of Verilog RTL exercises, synthesis examples, and FPGA experiments for digital design learning.",
+  "url": "https://github.com/haricious/mark-1-rtl-learning-verilog-hdl",
+  "language": "Verilog",
+  "stars": 0,
+  "topics": [
+    "Verilog",
+    "RTL",
+    "FPGA"
+  ],
+  "tags": [
+    "verilog",
+    "rtl",
+    "fpga"
+  ],
+  "relatedNotes": [
+    "8x1-mux-from-4x1-blocks",
+    "barrel-shifter-block-design",
+    "vivado-ip-integrator-schematic",
+    "switch-level-cmos-module-instantiation-click",
+    "gate-level-arithmetic-circuits",
+    "behavioral-modelling-revision-implementations",
+    "priority-encoder-module-instantiation",
+    "behavioral-modelling-blocking-nonblocking",
+    "public-build-log-commitment",
+    "hdlbits-day-one"
+  ]
+}

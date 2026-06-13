@@ -1,0 +1,18 @@
+{
+  "slug": "c-programming-basics-2025",
+  "type": "FIELD NOTE",
+  "title": "Going back to C — not because I had to, but because the gaps were showing",
+  "date": "[2025.01]",
+  "tags": [
+    "C",
+    "pointers",
+    "programming-fundamentals"
+  ],
+  "body": [
+    "Flow control, variables, pointers. The unglamorous core of a language that doesn't forgive you for not understanding it.",
+    "Pointers are where most people decide to look away and hope it doesn't matter. It always matters. The moment you try to do anything serious in embedded or systems — anything close to hardware — pointers stop being optional.",
+    "I've written C before. But there's a difference between writing code that compiles and actually knowing what you wrote. This course was about closing that gap.",
+    "The most useful thing wasn't any single concept. It was being forced to slow down at the parts I usually skim. Variables have types that map to memory. Addresses are values. Dereferencing is not magic — it's just following a pointer to what it points at.",
+    "Simple. Expensive to misunderstand."
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "slug": "bms-internship-start-jan-2026",
+  "type": "FIELD NOTE",
+  "title": "First day at Gandhigram: stepping into a real workspace changes the coordinates",
+  "date": "[2026.01.05]",
+  "tags": [
+    "internship",
+    "FPGA",
+    "BMS",
+    "gandhigram",
+    "EKF"
+  ],
+  "series": {
+    "name": "BMS Estimation — Gandhigram",
+    "part": 1,
+    "total": 5
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "slug": "thevenin-model-iv-test",
+  "type": "FIELD NOTE",
+  "title": "Building the model, then testing the real cell — the gap between them is the learning",
+  "date": "[2026.01]",
+  "tags": [
+    "thevenin-model",
+    "lead-acid",
+    "I-V-characteristics",
+    "parameter-extraction"
+  ],
+  "series": {
+    "name": "BMS Estimation — Gandhigram",
+    "part": 5,
+    "total": 5
+  },
+  "body": [
+    "The Thevenin equivalent circuit model is clean on paper. Two RC branches, a series resistance, an OCV source. You can write the state equations in a few lines.",
+    "Building it from scratch in Simulink is a different exercise. You have to make choices at every node: what the initial conditions are, how you're linking OCV to SOC, where the thermal dependence enters. The model isn't given to you — you construct it from assumptions, and the assumptions have consequences.",
+    "After the simulation came the physical test. A 12V 7Ah lead-acid gel cell. We collected I–V data, plotted it, and compared the behavior to what the model predicted.",
+    "The curves didn't match perfectly. They never do. But the shape was right, and the deviations were interpretable — not random noise, but systematic offsets that pointed to where the model was simplifying reality. That's the point of the exercise. A model you can't interrogate is just a black box with extra steps.",
+    "Need to move faster from here. The data is there. The framework is there. The next step is getting the EKF running on top of it."
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "slug": "gate-level-arithmetic-circuits",
+  "type": "FIELD NOTE",
+  "title": "Full adder, full subtractor — not complex, but foundational in a way that earns patience",
+  "date": "[2026.06.12]",
+  "tags": [
+    "verilog",
+    "gate-level",
+    "arithmetic-circuits",
+    "full-adder",
+    "RTL"
+  ],
+  "series": {
+    "name": "RTL Build Log",
+    "part": 5
+  },
+  "body": [
+    "Gate-level modelling lectures wrapped. Arithmetic circuits assignment done.",
+    "Full adder. Full subtractor. These are not impressive circuits. They are the circuits that quietly appear inside everything once designs start scaling. The sum and carry logic of a full adder shows up in ALUs, in address computation, in almost any datapath that does arithmetic.",
+    "The value of building them isn't the circuit. It's the discipline of working at gate level — understanding which primitive you're instantiating, what its truth table is, and how the combination produces behavior that a higher-level description would just assert.",
+    "You can write a full adder in one behavioral line. You can also write it gate by gate and understand every transition. Both produce the same hardware. Only one of them gives you the intuition you need when something breaks at synthesis."
+  ]
+}

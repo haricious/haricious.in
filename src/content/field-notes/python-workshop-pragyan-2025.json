@@ -1,0 +1,18 @@
+{
+  "slug": "python-workshop-pragyan-2025",
+  "type": "FIELD NOTE",
+  "title": "Two days of Python at NIT Trichy — what a workshop format forces you to do",
+  "date": "[2025.02.22]",
+  "tags": [
+    "python",
+    "workshop",
+    "NIT-trichy",
+    "pragyan"
+  ],
+  "body": [
+    "Two days. A room full of people. Problems you have to solve before the session moves on.",
+    "Workshop formats are unforgiving in a way that self-paced courses aren't. There's no pause button. If you don't keep up, the session moves without you and you're left reconstructing what happened from your notes.",
+    "What I found: I knew more Python than I thought I did, in some areas. And less in others. The gaps that showed up weren't syntax — syntax is searchable. The gaps were in problem decomposition. In knowing how to look at a task and carve it into pieces that Python can actually act on.",
+    "That's a different skill than knowing the language. And it's the one that the workshop actually sharpened."
+  ]
+}
