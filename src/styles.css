@@ -2506,6 +2506,49 @@ time {
     display: none;
   .desktop-links { display: none; }
 
+
+/* Additional responsive and accessibility improvements for mobile navbar */
+@media (max-width: 600px) {
+  .mobile-overlay {
+    width: 100vw;
+    max-width: none;
+    right: 0;
+    padding-top: calc(env(safe-area-inset-top) + 12px);
+    padding-bottom: calc(env(safe-area-inset-bottom) + 20px);
+  }
+
+  .mobile-header {
+    padding: 12px 8px;
+  }
+
+  .mobile-link { padding: 14px 16px; font-size: 1rem; }
+
+  .mobile-search input { min-height: 44px; font-size: 1rem; }
+
+  .close-btn { font-size: 22px; padding: 8px; }
+
+  .menu-button { width: 48px; height: 48px; }
+}
+
+/* Keyboard and focus styles for accessibility */
+.mobile-link:focus-visible,
+.close-btn:focus-visible,
+.menu-button:focus-visible {
+  outline: 3px solid rgba(125,211,252,0.18);
+  outline-offset: 4px;
+}
+
+/* Reduce motion preference */
+@media (prefers-reduced-motion: reduce) {
+  .mobile-overlay,
+  .mobile-backdrop {
+    transition: none !important;
+  }
+}
+
+/* Ensure the backdrop is behind UI elements when closed */
+.mobile-backdrop { will-change: opacity; }
+
   .menu-button {
     display: block;
   }
