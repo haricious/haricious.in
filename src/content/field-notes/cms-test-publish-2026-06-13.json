@@ -1,0 +1,9 @@
+{
+  "slug": "cms-test-publish-2026-06-13",
+  "title": "CMS Test Publish (2026-06-13)",
+  "date": "2026-06-13",
+  "type": "NOTE",
+  "summary": "Test entry created by automated CMS workflow to verify publish and deploy.",
+  "tags": ["cms-test","automation"],
+  "body": ["This is a test created by the assistant to simulate a CMS publish."]
+}
