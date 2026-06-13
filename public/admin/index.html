@@ -7,6 +7,10 @@
   </head>
   <body>
     <script>
+      // Require admin auth flag (set by /admin/pin.html) before loading CMS.
+      if (!sessionStorage.getItem('admin_authed')) {
+        window.location.href = '/admin/pin.html';
+      }
       // Load Netlify/Decap CMS and initialize once available.
       window.CMS_MANUAL_INIT = true;
       (function loadCMS(){

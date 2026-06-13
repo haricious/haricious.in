@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Admin PIN</title>
+    <style>
+      body { font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Arial; background:#f6f7f9; color:#111; display:flex; align-items:center; justify-content:center; height:100vh; margin:0 }
+      .box { background:#fff; padding:24px; border-radius:8px; box-shadow:0 10px 30px rgba(0,0,0,0.08); width:360px }
+      label{ display:block; font-weight:600; margin-bottom:8px }
+      input{ width:100%; padding:10px 12px; font-size:16px; border:1px solid #dfe3e8; border-radius:6px }
+      button{ margin-top:12px; width:100%; padding:10px; border-radius:6px; background:#111827;color:#fff;border:0;font-weight:700 }
+      .hint{ margin-top:8px; font-size:13px; color:#6b7280 }
+    </style>
+  </head>
+  <body>
+    <div class="box">
+      <h2>Admin access</h2>
+      <p>Enter your 10-digit admin PIN to continue.</p>
+      <label for="pin">PIN</label>
+      <input id="pin" name="pin" inputmode="numeric" pattern="[0-9]*" maxlength="10" />
+      <button id="submit">Unlock</button>
+      <p class="hint">This PIN is checked server-side (set `ADMIN_PIN` in Vercel). If not set, a dev fallback PIN `0000000000` is accepted.</p>
+      <p id="msg" style="color:#b91c1c"></p>
+    </div>
+
+    <script>
+      document.getElementById('submit').addEventListener('click', async () => {
+        const pin = document.getElementById('pin').value.trim();
+        document.getElementById('msg').textContent = '';
+        try {
+          const resp = await fetch('/api/pin-auth', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ pin }) });
+          const data = await resp.json();
+          if (data.ok) {
+            sessionStorage.setItem('admin_authed', '1');
+            location.href = '/admin/index.html';
+          } else {
+            document.getElementById('msg').textContent = data.error || 'Invalid PIN';
+          }
+        } catch (err) {
+          document.getElementById('msg').textContent = 'Auth failed';
+        }
+      });
+    </script>
+  </body>
+</html>

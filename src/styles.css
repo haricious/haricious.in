@@ -302,6 +302,15 @@ time,
   transform: scaleX(1);
 }
 
+.admin-footer-link {
+  color: var(--muted);
+  font-size: 0.78rem;
+  padding: 6px 8px;
+  border-radius: 6px;
+  border: 1px solid transparent;
+}
+.admin-footer-link:hover { opacity: 1; color: var(--amber); transform: translateY(-1px); }
+
 .menu-button {
   position: relative;
   z-index: 70;

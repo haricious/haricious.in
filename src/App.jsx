@@ -993,6 +993,7 @@ function SiteFooter() {
       <Link to="/what-changed-me">Changed Me</Link>
       <Link to="/about">About</Link>
       <a href="/rss.xml">RSS</a>
+      <a href="/admin/pin.html" className="admin-footer-link" style={{opacity:0.7, marginLeft:12}}>Admin</a>
     </footer>
   );
 }
