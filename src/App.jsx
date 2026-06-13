@@ -255,17 +255,45 @@ function Navbar() {
         <button type="button" aria-label="Go back" onClick={() => navigate(-1)}>&lt;</button>
         <button type="button" aria-label="Go forward" onClick={() => navigate(1)}>&gt;</button>
       </div>
-        <nav className="desktop-links" aria-label="Primary">
+      <nav className="desktop-links" aria-label="Primary">
         {navItems.map((item) => <NavLink key={item.path} to={item.path}>{item.label}</NavLink>)}
       </nav>
-      <button className="menu-button" type="button" aria-label="Toggle navigation" aria-expanded={open} onClick={() => setOpen((value) => !value)}>
-        <span /><span /><span />
+
+      {/* Mobile menu button */}
+      <button
+        className="menu-button"
+        type="button"
+        aria-label={open ? "Close navigation" : "Open navigation"}
+        aria-expanded={open}
+        aria-controls="mobile-nav"
+        onClick={() => setOpen((v) => !v)}
+      >
+        <span />
+        <span />
+        <span />
       </button>
-      <div className={`mobile-overlay ${open ? "is-open" : ""}`} aria-hidden={!open}>
-        <NavLink to="/search" onClick={close}>SEARCH</NavLink>
-        {navItems.map((item) => <NavLink key={item.path} to={item.path} onClick={close}>{item.label}</NavLink>)}
-        <NavLink to="/about" onClick={close}>ABOUT</NavLink>
-      </div>
+
+      {/* Slide-in mobile panel */}
+      <div className={`mobile-backdrop ${open ? 'is-open' : ''}`} onClick={close} aria-hidden={!open} />
+      <aside id="mobile-nav" className={`mobile-overlay ${open ? 'is-open' : ''}`} aria-hidden={!open}>
+        <div className="mobile-header">
+          <strong className="logo">&gt; haricious.in</strong>
+          <button className="close-btn" aria-label="Close menu" onClick={close}>✕</button>
+        </div>
+        <div className="mobile-search">
+          <form action="/search" onSubmit={close}>
+            <label htmlFor="mobile-search">Search</label>
+            <input id="mobile-search" name="q" placeholder="search site" />
+          </form>
+        </div>
+        <nav className="mobile-links" aria-label="Mobile">
+          {navItems.map((item) => (
+            <NavLink key={item.path} to={item.path} onClick={close} className="mobile-link">
+              {item.label}
+            </NavLink>
+          ))}
+        </nav>
+      </aside>
     </header>
   );
 }

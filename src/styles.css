@@ -335,18 +335,70 @@ time,
 
 .mobile-overlay {
   position: fixed;
-  inset: 72px 0 0;
-  z-index: 60;
-  display: none;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 84vw;
+  max-width: 420px;
+  z-index: 120;
+  display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 12px;
   overflow-y: auto;
-  border-top: 1px solid rgba(214, 186, 117, 0.24);
-  background:
-    linear-gradient(135deg, rgba(13, 20, 33, 0.98), rgba(3, 7, 17, 0.99)),
-    var(--bg);
-  padding: 24px 28px 34px;
+  background: linear-gradient(180deg, rgba(7,12,21,0.98), rgba(3,7,17,0.99));
+  box-shadow: -40px 0 80px rgba(0,0,0,0.6);
+  transform: translateX(100%);
+  transition: transform 260ms cubic-bezier(.2,.9,.2,1);
+  padding: 18px 18px 28px;
 }
+
+.mobile-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.45);
+  z-index: 110;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 180ms ease;
+}
+
+.mobile-backdrop.is-open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.mobile-overlay.is-open {
+  transform: translateX(0);
+}
+
+.mobile-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 6px 4px;
+}
+
+.mobile-header .logo {
+  color: var(--amber);
+  font-family: var(--mono);
+}
+
+.close-btn {
+  background: transparent;
+  border: none;
+  color: var(--muted);
+  font-size: 20px;
+  padding: 6px 8px;
+  cursor: pointer;
+}
+
+.mobile-search { padding: 8px 4px; }
+.mobile-search input { width: 100%; min-height: 40px; padding: 8px 10px; border-radius: 8px; border: 1px solid var(--border); background: rgba(3,7,17,0.6); }
+
+.mobile-links { display: flex; flex-direction: column; gap: 6px; padding: 6px 4px; }
+.mobile-link { display: block; padding: 12px 14px; border-radius: 8px; font-weight: 700; color: var(--text); background: transparent; }
+.mobile-link:hover, .mobile-link.active { background: rgba(214,186,117,0.06); color: var(--amber); transform: translateX(4px); }
 
 .mobile-overlay a {
   border-bottom: 1px solid var(--border);
@@ -2450,9 +2502,9 @@ time {
 
 @media (max-width: 1100px) {
   .desktop-links,
-  .nav-search {
+    display: inline-flex;
     display: none;
-  }
+  .desktop-links { display: none; }
 
   .menu-button {
     display: block;
