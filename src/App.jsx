@@ -46,6 +46,7 @@ import {
 } from "./features/becoming/pages/BecomingPages";
 import { InitialPreloader } from "./components/InitialPreloader";
 import "./features/becoming/styles.css";
+import LatestNotesModal from "./components/LatestNotesModal";
 
 const navItems = navigation.navItems;
 const floatingArchiveLinks = navigation.floatingArchiveLinks;
@@ -154,6 +155,19 @@ const interviewKnowledgeRecords = allContent.map((item) => ({
 function App() {
   const location = useLocation();
   const [preloaderVisible, setPreloaderVisible] = useState(true);
+  const [showLatestNotes, setShowLatestNotes] = useState(false);
+
+  const latestNotes = useMemo(() => {
+    const sorted = [...fieldNotes].sort((a, b) => stampToDate(b.date) - stampToDate(a.date));
+    return sorted.slice(0, 3);
+  }, [fieldNotes]);
+
+  useEffect(() => {
+    if (!preloaderVisible) {
+      const dismissed = localStorage.getItem('latestNotesDismissed') === '1';
+      if (!dismissed) setShowLatestNotes(true);
+    }
+  }, [preloaderVisible]);
 
   useEffect(() => {
     if (siteSettings?.seoDefaultTitle) document.title = siteSettings.seoDefaultTitle;
@@ -214,7 +228,8 @@ function App() {
             </Routes>
           </div>
         </main>
-        <SiteFooter />
+        <SiteFooter onOpenLatest={() => setShowLatestNotes(true)} />
+        <LatestNotesModal show={showLatestNotes} notes={latestNotes} onClose={() => { setShowLatestNotes(false); localStorage.setItem('latestNotesDismissed','1'); }} />
       </div>
     </>
   );
@@ -1053,7 +1068,7 @@ function CircuitScope() {
   );
 }
 
-function SiteFooter() {
+function SiteFooter({ onOpenLatest }) {
   return (
     <footer className="site-footer">
       <Link to="/search">Search</Link>
@@ -1062,6 +1077,7 @@ function SiteFooter() {
       <Link to="/what-changed-me">Changed Me</Link>
       <Link to="/about">About</Link>
       <a href="/rss.xml">RSS</a>
+      <button type="button" onClick={onOpenLatest} style={{ background: 'transparent', border: 'none', color: 'inherit', cursor: 'pointer', marginLeft: 8 }}>Latest notes</button>
       <a href="/admin/pin.html" className="admin-footer-link" style={{opacity:0.7, marginLeft:12}}>Admin</a>
     </footer>
   );
