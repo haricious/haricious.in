@@ -271,7 +271,8 @@ function Navbar() {
 
   // focus management & focus trap for mobile panel
   useEffect(() => {
-    const site = document.querySelector('.site-experience');
+    // hide the main content when mobile nav is open but keep the overlay accessible
+    const site = document.querySelector('main') || document.querySelector('.site-experience');
     const mobile = mobileNavRef.current;
     if (open) {
       previouslyFocusedRef.current = document.activeElement;
