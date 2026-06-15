@@ -341,7 +341,10 @@ function Navbar() {
       <div className={`mobile-backdrop ${open ? 'is-open' : ''}`} onClick={close} aria-hidden={!open} />
       <aside ref={mobileNavRef} id="mobile-nav" className={`mobile-overlay ${open ? 'is-open' : ''}`} aria-hidden={!open}>
         <div className="mobile-header">
-          <strong className="logo">&gt; haricious.in</strong>
+          <div style={{display: 'inline-flex', alignItems: 'center', gap: 10}}>
+            <img src="/haricious_logo.png" alt="Haricious" className="logo-image" style={{width:28,height:28}} />
+            <strong className="logo">&gt; haricious.in</strong>
+          </div>
           <button className="close-btn" aria-label="Close menu" onClick={close}>✕</button>
         </div>
         <div className="mobile-search">

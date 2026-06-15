@@ -334,29 +334,32 @@ time,
 }
 
 .mobile-overlay {
-  position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  width: 84vw;
-  max-width: 420px;
-  z-index: 120;
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  overflow-y: auto;
-  background: linear-gradient(180deg, rgba(7,12,21,0.98), rgba(3,7,17,0.99));
-  box-shadow: -40px 0 80px rgba(0,0,0,0.6);
-  transform: translateX(100%);
-  transition: transform 260ms cubic-bezier(.2,.9,.2,1);
-  padding: 18px 18px 28px;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: auto;
+    width: 84vw;
+    max-width: 420px;
+    z-index: 1110;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    overflow-y: auto;
+    background: linear-gradient(180deg, rgba(14,18,28,0.98), rgba(8,12,20,0.99));
+    box-shadow: -8px 0 40px rgba(0,0,0,0.6), inset 0 1px 0 rgba(255,255,255,0.02);
+    border-left: 1px solid rgba(125,211,252,0.04);
+    transform: translateX(100%);
+    transition: transform 260ms cubic-bezier(.2,.9,.2,1), opacity 160ms ease;
+    padding: 18px 18px 28px;
+    pointer-events: auto;
 }
 
 .mobile-backdrop {
   position: fixed;
   inset: 0;
   background: rgba(0,0,0,0.45);
-  z-index: 110;
+  z-index: 1100;
   opacity: 0;
   pointer-events: none;
   transition: opacity 180ms ease;
@@ -447,24 +450,12 @@ time,
 .mobile-link { min-height: 48px; padding: 12px 16px; border-radius: 10px; }
 .mobile-search input { min-height: 44px; }
 
-/* Ensure overlay is full viewport and on top */
-.mobile-overlay {
-  position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: auto;
-  width: 84vw;
-  max-width: 420px;
-  z-index: 120;
-}
-
 .mobile-search { padding: 8px 4px; }
 .mobile-search input { width: 100%; min-height: 40px; padding: 8px 10px; border-radius: 8px; border: 1px solid var(--border); background: rgba(3,7,17,0.6); }
 
 .mobile-links { display: flex; flex-direction: column; gap: 6px; padding: 6px 4px; }
 .mobile-link { display: block; padding: 12px 14px; border-radius: 8px; font-weight: 700; color: var(--text); background: transparent; }
-.mobile-link:hover, .mobile-link.active { background: rgba(214,186,117,0.06); color: var(--amber); transform: translateX(4px); }
+.mobile-link:hover, .mobile-link.active { background: rgba(214,186,117,0.08); color: var(--amber); transform: translateX(4px); box-shadow: 0 6px 18px rgba(0,0,0,0.4); }
 
 .mobile-overlay a {
   border-bottom: 1px solid var(--border);
@@ -472,7 +463,21 @@ time,
   font-size: 1rem;
   font-weight: 700;
   padding: 14px 0;
+  pointer-events: auto;
 }
+
+.mobile-header {
+  border-bottom: 1px solid rgba(125,211,252,0.04);
+  padding-bottom: 10px;
+}
+
+.menu-button {
+  border: 1px solid rgba(125,211,252,0.12);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.36);
+  color: var(--amber);
+}
+
+.menu-button span { background: var(--amber); opacity: 0.9; }
 
 .mobile-overlay a:focus-visible {
   outline-offset: -2px;
@@ -2567,8 +2572,22 @@ time {
 }
 
 @media (max-width: 1100px) {
-  .menu-button { display: inline-flex; }
+  .menu-button { display: inline-flex !important; }
   .desktop-links { display: none; }
+}
+
+/* Lightweight preloader reduces heavy animated pieces on small screens */
+.boot-preloader.is-light .boot-preloader__scan,
+.boot-preloader.is-light .boot-preloader__packets,
+.boot-preloader.is-light .boot-preloader__field {
+  display: none !important;
+}
+.boot-preloader.is-light .boot-preloader__core {
+  min-height: 180px;
+  padding: 18px;
+}
+.boot-preloader.is-light .boot-preloader__title {
+  font-size: 2.4rem;
 }
 
 /* Additional responsive and accessibility improvements for mobile navbar */
@@ -2592,6 +2611,61 @@ time {
   .close-btn { font-size: 22px; padding: 8px; }
 
   .menu-button { width: 48px; height: 48px; }
+}
+
+/* Strong mobile navbar adjustments: ensure visibility and include header in overlay */
+@media (max-width: 920px) {
+  .site-nav {
+    padding: 6px 12px;
+    min-height: 64px;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .site-nav .logo {
+    font-size: 0.95rem;
+    color: var(--amber);
+  }
+
+  /* Hide larger controls and show a single menu button */
+  .nav-search,
+  .nav-history,
+  .desktop-links {
+    display: none !important;
+  }
+
+  /* Make menu-button fixed so it's always tappable even if layout shifts */
+  .menu-button {
+    display: inline-flex !important;
+    position: fixed;
+    top: calc(env(safe-area-inset-top, 8px) + 8px);
+    right: 12px;
+    z-index: 1220;
+    background: var(--surface-2);
+  }
+
+/* Increase tap targets inside overlay */
+.mobile-overlay .mobile-link,
+.mobile-overlay a,
+.mobile-overlay button {
+  -webkit-tap-highlight-color: rgba(125,211,252,0.12);
+  touch-action: manipulation;
+  cursor: pointer;
+}
+
+  /* Make mobile overlay occupy full viewport and avoid being hidden under header */
+  .mobile-overlay {
+    top: 0;
+    left: 0;
+    width: 100vw;
+    max-width: none;
+    padding-top: calc(env(safe-area-inset-top) + 72px);
+    padding-left: 14px;
+    padding-right: 14px;
+    box-sizing: border-box;
+  }
+
+  .mobile-header .logo { font-size: 1rem; }
 }
 
 /* Keyboard and focus styles for accessibility */

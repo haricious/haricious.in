@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 
-const BOOT_DURATION_MS = 1800; // shorten for mobile/responsive experience
+const BOOT_DURATION_MS = 900; // faster readiness but require explicit enter
 const EXIT_DURATION_MS = 420;
 
 export function InitialPreloader({ onFinished }) {
@@ -33,15 +33,16 @@ export function InitialPreloader({ onFinished }) {
     }
   }, [ready]);
 
-  // Auto-enter after a short delay once ready to avoid blocking users who don't interact
+  // Do not auto-enter: require explicit user action to continue.
+  // Enable a lightweight mode on small screens to reduce animation cost.
+  const [lightweight, setLightweight] = useState(false);
   useEffect(() => {
-    if (!ready || exiting) return undefined;
-    const delay = window.matchMedia("(max-width: 600px)").matches ? 300 : 900;
-    const autoEnter = window.setTimeout(() => {
-      handleEnter();
-    }, delay);
-    return () => window.clearTimeout(autoEnter);
-  }, [ready, exiting]);
+    const media = window.matchMedia("(max-width: 600px)");
+    const update = () => setLightweight(media.matches);
+    update();
+    media.addEventListener?.("change", update);
+    return () => media.removeEventListener?.("change", update);
+  }, []);
 
   const handleEnter = () => {
     if (!ready || exiting) return;
@@ -62,7 +63,7 @@ export function InitialPreloader({ onFinished }) {
 
   return (
     <section
-      className={`boot-preloader${ready ? " is-ready" : ""}${exiting ? " is-exiting" : ""}${reducedMotion ? " is-reduced-motion" : ""}`}
+      className={`boot-preloader${ready ? " is-ready" : ""}${exiting ? " is-exiting" : ""}${reducedMotion ? " is-reduced-motion" : ""}${lightweight ? " is-light" : ""}`}
       role="dialog"
       aria-modal="true"
       aria-labelledby="boot-preloader-title"
