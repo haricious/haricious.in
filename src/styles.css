@@ -2601,7 +2601,7 @@ time {
   .loop-card {
     min-height: auto;
   }
-}
+
 
 @media (max-width: 920px) {
   .boot-preloader__core {
