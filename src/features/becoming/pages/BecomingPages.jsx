@@ -458,33 +458,7 @@ export function DreamsPage() {
   );
 }
 
-export function ButterflyEffectPage() {
-  const [activeIndex, setActiveIndex] = useState(0);
-  const active = becomingArchive.butterflyEffect[activeIndex];
-
-  return (
-    <FeatureFrame title="BUTTERFLY_EFFECT /" subtext="A cause-and-effect map showing how small events gradually changed the direction of the life and work.">
-      <div className="butterfly-layout">
-        <div className="butterfly-chain pcb-card" aria-label="Cause and effect chain">
-          {becomingArchive.butterflyEffect.map((node, index) => (
-            <button className={index <= activeIndex ? "active" : ""} type="button" key={node.id} onClick={() => setActiveIndex(index)}>
-              {node.title}
-            </button>
-          ))}
-        </div>
-        <article className="butterfly-story pcb-card">
-          <span className="mono-chip">story mode {activeIndex + 1}/{becomingArchive.butterflyEffect.length}</span>
-          <h2>{active.title}</h2>
-          <p>{active.story}</p>
-          <div className="replay-actions">
-            <button type="button" onClick={() => setActiveIndex((value) => Math.max(0, value - 1))} disabled={activeIndex === 0}>Previous</button>
-            <button type="button" onClick={() => setActiveIndex((value) => Math.min(becomingArchive.butterflyEffect.length - 1, value + 1))} disabled={activeIndex === becomingArchive.butterflyEffect.length - 1}>Next link</button>
-          </div>
-        </article>
-      </div>
-    </FeatureFrame>
-  );
-}
+// ButterflyEffectPage removed per request. Content retained in archive but not exposed as a route.
 
 export function LettersPage() {
   return (
@@ -516,7 +490,6 @@ export function BecomingIndexLinks() {
     ["/learning-heatmap", "Learning Heatmap"],
     ["/currently-becoming", "Currently Becoming"],
     ["/dreams", "Dreams"],
-    ["/butterfly-effect", "Butterfly Effect Map"],
     ["/what-changed-me", "What Changed Me?"],
     ["/interview-hari", "AI Interview Hari"],
     ["/letters", "Letters to Future Self"]

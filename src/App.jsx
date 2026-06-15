@@ -37,7 +37,6 @@ import { LiveSignalPath } from "./features/becoming/components/LiveSignalPath";
 import { ReadingDepth, makeNoteDepth, makeProjectDepth } from "./features/becoming/components/ReadingDepth";
 import { becomingSearchRecords } from "./features/becoming/content";
 import {
-  ButterflyEffectPage,
   CurrentlyBecomingPage,
   DreamsPage,
   FailuresPage,
@@ -157,6 +156,15 @@ function App() {
   const [preloaderVisible, setPreloaderVisible] = useState(true);
   const [showLatestNotes, setShowLatestNotes] = useState(false);
 
+  // Ensure modal shows at least once by clearing any previous dismissal flag on app start
+  useEffect(() => {
+    try {
+      localStorage.removeItem('latestNotesDismissed');
+    } catch (err) {
+      // ignore
+    }
+  }, []);
+
   const latestNotes = useMemo(() => {
     const sorted = [...fieldNotes].sort((a, b) => stampToDate(b.date) - stampToDate(a.date));
     return sorted.slice(0, 3);
@@ -221,7 +229,6 @@ function App() {
               <Route path="/failures" element={<FailuresPage />} />
               <Route path="/currently-becoming" element={<CurrentlyBecomingPage />} />
               <Route path="/dreams" element={<DreamsPage />} />
-              <Route path="/butterfly-effect" element={<ButterflyEffectPage />} />
               <Route path="/what-changed-me" element={<WhatChangedMePage />} />
               <Route path="/letters" element={<LettersPage />} />
               <Route path="*" element={<Navigate to="/" replace />} />
@@ -705,7 +712,7 @@ function BuildLog() {
             <h2>{project.title}</h2>
             <p><strong>Outcome:</strong> {project.outcome}</p>
             <p><strong>Lesson:</strong> {project.lesson}</p>
-            <TagRow tags={project.tags} />
+            <TagRow tags={project.tags} suppressLinks />
             <div className="card-footer"><time>{project.date}</time><span aria-hidden="true">-&gt;</span></div>
           </Link>
         ))}
@@ -979,11 +986,11 @@ function About() {
 
 function ResultList({ results, emptyCopy }) {
   if (!results.length) return <p className="empty-copy">{emptyCopy}</p>;
-  return <div className="notes-list">{results.map((item, index) => <Link className="note-row pcb-card" to={item.path} key={`${item.kind}-${item.title}`}><span className="line-number">{String(index + 1).padStart(2, "0")}</span><LogicTag label={item.kind} /><div className="note-main"><h2>{item.title}</h2><p>{item.summary || item.outcome}</p><TagRow tags={item.tags || []} /></div><time>{item.date}</time></Link>)}</div>;
+  return <div className="notes-list">{results.map((item, index) => <Link className="note-row pcb-card" to={item.path} key={`${item.kind}-${item.title}`}><span className="line-number">{String(index + 1).padStart(2, "0")}</span><LogicTag label={item.kind} /><div className="note-main"><h2>{item.title}</h2><p>{item.summary || item.outcome}</p><TagRow tags={item.tags || []} suppressLinks /></div><time>{item.date}</time></Link>)}</div>;
 }
 
 function NoteRow({ entry, index }) {
-  return <Link className="note-row pcb-card" to={`/field-notes/${entry.slug}`}><span className="line-number">{String(index + 1).padStart(2, "0")}</span><LogicTag label={entry.type} /><div className="note-main"><h2>{entry.title}</h2><p>{entry.summary}</p><TagRow tags={entry.tags} /></div><time>{entry.date}</time></Link>;
+  return <Link className="note-row pcb-card" to={`/field-notes/${entry.slug}`}><span className="line-number">{String(index + 1).padStart(2, "0")}</span><LogicTag label={entry.type} /><div className="note-main"><h2>{entry.title}</h2><p>{entry.summary}</p><TagRow tags={entry.tags} suppressLinks /></div><time>{entry.date}</time></Link>;
 }
 
 function RelatedNotes({ notes }) {
@@ -1029,8 +1036,18 @@ function FilterBar({ filters, active, onChange }) {
   return <div className="filter-bar" role="tablist" aria-label="Content filter">{filters.map((filter) => <button className={filter === active ? "active" : ""} key={filter} onClick={() => onChange(filter)} type="button">{filter}</button>)}</div>;
 }
 
-function TagRow({ tags, inline = false }) {
-  return <div className={`tag-row ${inline ? "tag-row-inline" : ""}`}>{tags.map((tag) => <Link to={`/tags/${tag}`} key={tag}>{formatTag(tag)}</Link>)}</div>;
+function TagRow({ tags, inline = false, suppressLinks = false }) {
+  return (
+    <div className={`tag-row ${inline ? "tag-row-inline" : ""}`}>
+      {tags.map((tag) => (
+        suppressLinks ? (
+          <span key={tag} className="tag-text">{formatTag(tag)}</span>
+        ) : (
+          <Link to={`/tags/${tag}`} key={tag}>{formatTag(tag)}</Link>
+        )
+      ))}
+    </div>
+  );
 }
 
 function StatusTag({ status }) {

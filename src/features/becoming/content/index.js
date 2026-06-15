@@ -6,7 +6,6 @@ export const becomingNav = [
   { label: "FAILURES", path: "/failures" },
   { label: "BECOMING", path: "/currently-becoming" },
   { label: "DREAMS", path: "/dreams" },
-  { label: "BUTTERFLY", path: "/butterfly-effect" },
   { label: "CHANGED", path: "/what-changed-me" },
   { label: "LETTERS", path: "/letters" }
 ];

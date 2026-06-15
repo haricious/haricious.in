@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 
-const BOOT_DURATION_MS = 4000;
-const EXIT_DURATION_MS = 760;
+const BOOT_DURATION_MS = 1800; // shorten for mobile/responsive experience
+const EXIT_DURATION_MS = 420;
 
 export function InitialPreloader({ onFinished }) {
   const [ready, setReady] = useState(false);
@@ -33,10 +33,21 @@ export function InitialPreloader({ onFinished }) {
     }
   }, [ready]);
 
+  // Auto-enter after a short delay once ready to avoid blocking users who don't interact
+  useEffect(() => {
+    if (!ready || exiting) return undefined;
+    const delay = window.matchMedia("(max-width: 600px)").matches ? 300 : 900;
+    const autoEnter = window.setTimeout(() => {
+      handleEnter();
+    }, delay);
+    return () => window.clearTimeout(autoEnter);
+  }, [ready, exiting]);
+
   const handleEnter = () => {
     if (!ready || exiting) return;
     setExiting(true);
-    window.setTimeout(onFinished, reducedMotion ? 120 : EXIT_DURATION_MS);
+    const exitDelay = window.matchMedia("(max-width: 600px)").matches ? 180 : EXIT_DURATION_MS;
+    window.setTimeout(onFinished, reducedMotion ? 120 : exitDelay);
   };
 
   const handleKeyDown = (event) => {
