@@ -284,35 +284,35 @@ function Navbar() {
   }, [open]);
 
   return (
-    <header className="site-nav">
-      <Link className="logo" to="/" onClick={close}>&gt; haricious.in</Link>
-      <form className="nav-search" action="/search" onSubmit={close}>
-        <label htmlFor="site-search">Search site</label>
-        <input id="site-search" name="q" placeholder="search clock-domain-crossing" />
-      </form>
-      <div className="nav-history" aria-label="History navigation">
-        <button type="button" aria-label="Go back" onClick={() => navigate(-1)}>&lt;</button>
-        <button type="button" aria-label="Go forward" onClick={() => navigate(1)}>&gt;</button>
-      </div>
-      <nav className="desktop-links" aria-label="Primary">
-        {navItems.map((item) => <NavLink key={item.path} to={item.path}>{item.label}</NavLink>)}
-      </nav>
+    <>
+      <header className="site-nav">
+        <Link className="logo" to="/" onClick={close}>&gt; haricious.in</Link>
+        <form className="nav-search" action="/search" onSubmit={close}>
+          <label htmlFor="site-search">Search site</label>
+          <input id="site-search" name="q" placeholder="search clock-domain-crossing" />
+        </form>
+        <div className="nav-history" aria-label="History navigation">
+          <button type="button" aria-label="Go back" onClick={() => navigate(-1)}>&lt;</button>
+          <button type="button" aria-label="Go forward" onClick={() => navigate(1)}>&gt;</button>
+        </div>
+        <nav className="desktop-links" aria-label="Primary">
+          {navItems.map((item) => <NavLink key={item.path} to={item.path}>{item.label}</NavLink>)}
+        </nav>
 
-      {/* Mobile menu button */}
-      <button
-        ref={menuButtonRef}
-        className="menu-button"
-        type="button"
-        aria-label={open ? "Close navigation" : "Open navigation"}
-        aria-expanded={open}
-        aria-controls="mobile-nav"
-        onClick={() => setOpen((v) => !v)}
-      >
-        <span />
-        <span />
-        <span />
-      </button>
-
+        {/* Mobile menu button */}
+        <button
+          ref={menuButtonRef}
+          className="menu-button"
+          type="button"
+          aria-label={open ? "Close navigation" : "Open navigation"}
+          aria-expanded={open}
+          aria-controls="mobile-nav"
+          onClick={() => setOpen((v) => !v)}
+        >
+          <span />
+          <span />
+          <span />
+        </button>
       </header>
 
       {/* Slide-in mobile panel (moved outside header to avoid clipping) */}
@@ -336,6 +336,7 @@ function Navbar() {
           ))}
         </nav>
       </aside>
+    </>
   );
 }
 
