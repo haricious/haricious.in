@@ -333,6 +333,25 @@ time,
   background: var(--amber);
 }
 
+.nav-symbol {
+  display: inline-block;
+  width: 22px;
+  height: 22px;
+  object-fit: contain;
+  vertical-align: middle;
+}
+
+.menu-button .nav-symbol {
+  width: 20px;
+  height: 20px;
+  margin: 0 auto 6px auto;
+  display: block;
+}
+
+/* Remove logo-image usage in mobile header; ensure spacing when only symbol present */
+.mobile-header .logo-image { display: none; }
+.mobile-header .logo { font-size: 0.95rem; }
+
 .mobile-overlay {
     position: fixed;
     top: 0;

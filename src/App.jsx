@@ -332,6 +332,7 @@ function Navbar() {
           aria-controls="mobile-nav"
           onClick={() => setOpen((v) => !v)}
         >
+          <img src="/icons/haricious-symbol.svg" alt="Haricious" className="nav-symbol" />
           <span />
           <span />
           <span />
@@ -343,7 +344,7 @@ function Navbar() {
       <aside ref={mobileNavRef} id="mobile-nav" className={`mobile-overlay ${open ? 'is-open' : ''}`} aria-hidden={!open}>
         <div className="mobile-header">
           <div style={{display: 'inline-flex', alignItems: 'center', gap: 10}}>
-            <img src="/haricious_logo.png" alt="Haricious" className="logo-image" style={{width:28,height:28}} />
+            <img src="/icons/haricious-symbol.svg" alt="Haricious symbol" className="nav-symbol" />
             <strong className="logo">&gt; haricious.in</strong>
           </div>
           <button className="close-btn" aria-label="Close menu" onClick={close}>✕</button>
