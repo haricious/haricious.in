@@ -260,6 +260,13 @@ function Navbar() {
     return () => document.body.classList.remove("nav-open");
   }, [open]);
 
+  const handleSearchSubmit = (event) => {
+    event.preventDefault();
+    const q = new FormData(event.currentTarget).get("q") || "";
+    navigate(`/search${q ? `?q=${encodeURIComponent(q)}` : ""}`);
+    setOpen(false);
+  };
+
   useEffect(() => {
     if (!open) return undefined;
     const closeOnEscape = (event) => {
@@ -310,7 +317,7 @@ function Navbar() {
     <>
       <header className="site-nav">
         <Link className="logo" to="/" onClick={close}>&gt; haricious.in</Link>
-        <form className="nav-search" action="/search" onSubmit={close}>
+        <form className="nav-search" onSubmit={handleSearchSubmit}>
           <label htmlFor="site-search">Search site</label>
           <input id="site-search" name="q" placeholder="search clock-domain-crossing" />
         </form>
@@ -350,7 +357,7 @@ function Navbar() {
           <button className="close-btn" aria-label="Close menu" onClick={close}>✕</button>
         </div>
         <div className="mobile-search">
-          <form action="/search" onSubmit={close}>
+          <form onSubmit={handleSearchSubmit}>
             <label htmlFor="mobile-search">Search</label>
             <input id="mobile-search" name="q" placeholder="search site" />
           </form>

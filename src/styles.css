@@ -2706,11 +2706,6 @@ time {
 
 /* Ensure the backdrop is behind UI elements when closed */
 .mobile-backdrop { will-change: opacity; }
-
-  .menu-button {
-    display: block;
-  }
-
   .mobile-overlay.is-open {
     display: flex;
   }
